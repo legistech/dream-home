@@ -1,16 +1,29 @@
-# dream_home
+<h1 align="center">
+  <img src="https://socialify.git.ci/legistech/dream-home/image?language=1&name=1&owner=1&stargazers=1&theme=Light" />
+</h1>
 
-A new Flutter project.
+> Embark on a journey to find your Dream Home <br />
 
-## Getting Started
+## Setup
 
-This project is a starting point for a Flutter application.
+Run the following commands from your terminal:
 
-A few resources to get you started if this is your first Flutter project:
+1. `git clone https://github.com/hmseeb/dream-home.git` to clone this repository.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. `flutter pub get` in the project root directory to install all the required dependencies.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+
+<table width="100%">
+  <tbody>
+    <tr>
+      <td width="1%"><img src="https://github.com/legistech/connectopia/assets/74695355/b86a3b5f-798f-471f-b3f8-98159cce6d54"/></td>
+       <td width="1%"><img src="https://github.com/legistech/connectopia/assets/74695355/9dda91f6-12fd-4649-8958-8907acc0bcfc"/></td>
+      <td width="1%"><img src="https://github.com/legistech/connectopia/assets/74695355/631680a2-3a3b-4290-aab2-474ded2626ad"/></td>
+    </tr>
+  </tbody>
+</table>
+
+## LICENSE
+
+[MIT-licensed](https://github.com/hmseeb/dream-home/blob/main/LICENSE).
