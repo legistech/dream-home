@@ -19,13 +19,13 @@ class HomeScreen extends StatefulWidget {
 /// To add a new screen, add it to the [screens] list and add a new index to [selectedIndex].
 List<Widget> screens = [
   const FeaturedPropertiesScreen(),
-  const UserProfileScreen(),
+  const Center(
+    child: Text('MapScreen'),
+  ),
   const Center(
     child: Text('InboxScreen'),
   ),
-  const Center(
-    child: Text('ProfileScreen'),
-  ),
+  const UserProfileScreen(),
 ];
 
 int selectedIndex = 0;
