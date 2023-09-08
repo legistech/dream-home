@@ -21,7 +21,7 @@ class WelcomeImage extends StatelessWidget {
       child: Image.asset(
         Asset.welcome,
         fit: BoxFit.cover,
-        height: height * 50,
+        height: height * 55,
       ),
     );
   }

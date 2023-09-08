@@ -1,6 +1,8 @@
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:flutter/material.dart';
 
+/// [CommonElevatedButton] is a common button used in most
+/// of the buttons in the app.
 class CommonElevatedButton extends StatelessWidget {
   const CommonElevatedButton({
     super.key,
@@ -20,11 +22,14 @@ class CommonElevatedButton extends StatelessWidget {
         minimumSize: MaterialStatePropertyAll(
           Size(
             width * 90,
-            height * 6,
+            height * 7,
           ),
         ),
       ),
-      child: Text(text),
+      child: Text(
+        text,
+        style: TextStyle(fontSize: height * 2.5),
+      ),
     );
   }
 }

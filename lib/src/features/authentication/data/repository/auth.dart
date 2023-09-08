@@ -37,18 +37,29 @@ class AuthRepo {
   static Future<RecordModel> register(
       String email, String name, String password) async {
     final pb = await PocketBaseInstance.instance;
+    print('Email: $email, Name: $name, Password: $password');
     try {
       final record = await pb.collection('users').create(body: {
         'email': email,
         'name': name,
         'password': password,
-        'confirmPassword': password,
+        'passwordConfirm': password,
       });
 
       // TODO: Add request email verification method after user registration after creating an email verification page.
       // await pb.collection('users').requestEmailVerification(email);
       return record;
     } catch (e) {
+      debugPrint(e.toString());
+      rethrow;
+    }
+  }
+
+  static Future<void> requestVerification(String email) async {
+    final pb = await PocketBaseInstance.instance;
+    try {
+      pb.collection('users').requestVerification(email);
+    } on ClientException catch (e) {
       debugPrint(e.toString());
       rethrow;
     }

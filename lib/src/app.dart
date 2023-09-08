@@ -11,6 +11,9 @@ class DreamHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
+      /// [blocProviders] is a list of all the blocs used in the app.
+      /// To add a new bloc, add it to the list of [blocProviders].
+
       providers: Providers.blocProviders,
       child: MaterialApp(
         title: 'Dream Home',

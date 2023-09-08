@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginSubtitle extends StatelessWidget {
-  const LoginSubtitle(
+/// [AuthSubtitle] is the subtitle of the login and register pages.
+class AuthSubtitle extends StatelessWidget {
+  const AuthSubtitle(
     this.subtitle, {
     super.key,
   });
