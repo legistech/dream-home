@@ -1,5 +1,6 @@
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/screens/fp.dart';
+import 'package:dream_home/src/features/user_profile/presention/screens/profile.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -18,9 +19,7 @@ class HomeScreen extends StatefulWidget {
 /// To add a new screen, add it to the [screens] list and add a new index to [selectedIndex].
 List<Widget> screens = [
   const FeaturedPropertiesScreen(),
-  const Center(
-    child: Text('MapScreen'),
-  ),
+  const UserProfileScreen(),
   const Center(
     child: Text('InboxScreen'),
   ),
