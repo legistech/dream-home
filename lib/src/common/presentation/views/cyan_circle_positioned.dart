@@ -12,11 +12,11 @@ class CyanPositionedCircle extends StatelessWidget {
     final height = ScreenSize.height(context);
     final width = ScreenSize.width(context);
     return Positioned(
-      top: height * 50,
-      left: width * 80,
+      top: height * 57,
+      left: width * 85,
       child: Container(
-        width: width * 40,
-        height: height * 40,
+        width: width * 35,
+        height: height * 35,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: Pellet.kSecondaryColor,

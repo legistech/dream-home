@@ -3,6 +3,7 @@ import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+/// [HomeScreen] is the home page of the app.
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 

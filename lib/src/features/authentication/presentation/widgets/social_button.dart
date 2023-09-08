@@ -1,6 +1,8 @@
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
+/// [SocialButton] is used in both login and register pages.
+/// It is used to login or register using third party apps.
 class SocialButton extends StatelessWidget {
   const SocialButton({
     super.key,
@@ -41,7 +43,13 @@ class SocialButton extends StatelessWidget {
             width: 30,
           ),
           const SizedBox(width: 10),
-          Text(text),
+          Text(
+            'Continue with $text',
+            style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w400,
+            ),
+          ),
         ],
       ),
     );

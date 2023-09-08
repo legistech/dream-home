@@ -13,6 +13,7 @@ part 'login_state.dart';
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   String email = '';
   String password = '';
+  bool isPasswordVisible = false;
   LoginBloc() : super(LoginInitial()) {
     bool validCredentials(String email, String password) {
       return Validator.validateEmail(email) &&
@@ -59,6 +60,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(LoginLoading());
       final timer = Stopwatch()..start();
       try {
+        // TODO: Fetch basic data from the server is user is authorized
         final bool isAuthorized = await AuthRepo.isUserAuthorized;
         final timeTaken = timer.elapsedMilliseconds;
         Stopwatch().stop();
@@ -83,8 +85,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       }
     });
 
+    on<LoginTogglePasswordVisibility>((event, emit) {
+      // Storing the previous state to emit it again after toggling.
+      LoginState prevState = state;
+      isPasswordVisible = !isPasswordVisible;
+      emit(ToggledPasswordVisibility());
+      emit(prevState);
+    });
+
     // TODO: Remove this when proper logout is implemented
-    // Currently calling adding this state from app bar of home page.
+    // Currently adding this event from app bar of home page.
     on<LogoutButtonPressed>((event, emit) async {
       final pb = await PocketBaseInstance.instance;
       pb.authStore.clear();

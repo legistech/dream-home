@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginTitle extends StatelessWidget {
-  const LoginTitle(
+/// [AuthTitle] is the Title of the login and register pages.
+class AuthTitle extends StatelessWidget {
+  const AuthTitle(
     this.title, {
     super.key,
   });

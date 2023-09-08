@@ -10,6 +10,8 @@ import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
+/// [WelcomeScreen] is the screen where the user lands when they open the app
+/// if they are not logged in already.
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
@@ -29,18 +31,18 @@ class WelcomeScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 WelcomeImage(Asset.welcome),
-                SizedBox(height: height * 5),
+                SizedBox(height: height * 6),
                 const WelcomeTitle('Discover Your World of Possibilities'),
-                SizedBox(height: height * 1),
                 const WelcomeDescription('Embark on a journey to find your'),
                 const DescriptionTitle('DreamHome'),
                 const Spacer(),
                 CommonElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed('/login');
+                      Navigator.of(context)
+                          .pushNamedAndRemoveUntil('/login', (route) => false);
                     },
                     text: 'Get Started'),
-                SizedBox(height: height * 4),
+                SizedBox(height: height * 3),
               ],
             ),
           ),
@@ -49,16 +51,3 @@ class WelcomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
