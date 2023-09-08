@@ -30,5 +30,4 @@ final class LoginSubmitButtonPressed extends LoginEvent {
 
 
 final class LoginValidateUser extends LoginEvent {}
-final class LogoutButtonPressed extends LoginEvent {}
 final class LoginTogglePasswordVisibility extends LoginEvent {}
