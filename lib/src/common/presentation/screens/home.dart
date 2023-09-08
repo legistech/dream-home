@@ -1,3 +1,4 @@
+import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/screens/fp.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +34,7 @@ int selectedIndex = 0;
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final width = ScreenSize.width(context);
     return Container(
       decoration: BoxDecoration(
         gradient: Pellet.kBackgroundGradient,
@@ -58,6 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
                 navigationBarItem(IconlyLight.home, 0, "Home"),
                 navigationBarItem(Icons.map_outlined, 1, "Map"),
+                SizedBox(width: width * 2),
                 navigationBarItem(IconlyLight.chat, 2, "Inbox"),
                 navigationBarItem(IconlyLight.user, 3, "Profile"),
               ],
