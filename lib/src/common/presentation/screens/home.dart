@@ -1,5 +1,6 @@
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/screens/fp.dart';
+import 'package:dream_home/src/features/user_profile/presention/screens/profile.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -24,9 +25,7 @@ List<Widget> screens = [
   const Center(
     child: Text('InboxScreen'),
   ),
-  const Center(
-    child: Text('ProfileScreen'),
-  ),
+  const UserProfileScreen(),
 ];
 
 int selectedIndex = 0;

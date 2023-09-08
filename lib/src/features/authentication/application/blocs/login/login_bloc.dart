@@ -1,5 +1,4 @@
 import 'package:dream_home/src/common/utils/extensions/client_exception.dart';
-import 'package:dream_home/src/db/pocketbase.dart';
 import 'package:dream_home/src/features/authentication/data/repository/auth.dart';
 import 'package:dream_home/src/features/authentication/data/repository/validator.dart';
 import 'package:equatable/equatable.dart';
@@ -91,13 +90,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       isPasswordVisible = !isPasswordVisible;
       emit(ToggledPasswordVisibility());
       emit(prevState);
-    });
-
-    // TODO: Remove this when proper logout is implemented
-    // Currently adding this event from app bar of home page.
-    on<LogoutButtonPressed>((event, emit) async {
-      final pb = await PocketBaseInstance.instance;
-      pb.authStore.clear();
     });
   }
 }
