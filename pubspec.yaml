@@ -28,11 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.2
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
+  iconly: ^1.0.1
   pocketbase: ^0.15.0
   shared_preferences: ^2.2.1
 
@@ -69,7 +71,6 @@ flutter:
         - asset: assets/fonts/Satoshi-Light.otf
         - asset: assets/fonts/Satoshi-Medium.otf
         - asset: assets/fonts/Satoshi-Bold.otf
-
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

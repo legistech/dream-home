@@ -2,6 +2,8 @@ import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/widgets.dart';
 
+/// [GreyPositionedCircleBorder] is a grey circle border positioned at the
+/// bottom left of the welcome screen.
 class GreyPositionedCircleBorder extends StatelessWidget {
   const GreyPositionedCircleBorder({
     super.key,

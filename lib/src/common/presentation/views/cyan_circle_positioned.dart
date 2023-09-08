@@ -2,6 +2,8 @@ import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/widgets.dart';
 
+/// [CyanPositionedCircle] is a cyan circle positioned at the
+/// mid-bottom right of the welcome screen.
 class CyanPositionedCircle extends StatelessWidget {
   const CyanPositionedCircle({
     super.key,

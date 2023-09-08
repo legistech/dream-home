@@ -10,6 +10,7 @@ ThemeData getThemeData() => ThemeData(
         foregroundColor: Pellet.kDark,
         elevation: 0,
       ),
+      iconTheme: IconThemeData(color: Pellet.kDark),
       scaffoldBackgroundColor: Colors.transparent,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: elevatedButtonTheme(),
