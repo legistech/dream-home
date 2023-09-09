@@ -1,6 +1,8 @@
 import 'package:dream_home/src/common/utils/extensions/client_exception.dart';
 import 'package:dream_home/src/features/authentication/data/repository/auth.dart';
 import 'package:dream_home/src/features/authentication/data/repository/validator.dart';
+import 'package:dream_home/src/features/featured_properties/data/properties.dart';
+import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -59,8 +61,17 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(LoginLoading());
       final timer = Stopwatch()..start();
       try {
-        // TODO: Fetch basic data from the server is user is authorized
         final bool isAuthorized = await AuthRepo.isUserAuthorized;
+        late List<Property> properties;
+        if (isAuthorized) {
+          final record = await Properties.getProperties;
+          properties = record.items
+              .map(
+                (property) => Property.fromRecord(property),
+              )
+              .toList();
+          debugPrint(properties.first.address);
+        }
         final timeTaken = timer.elapsedMilliseconds;
         Stopwatch().stop();
 
@@ -69,13 +80,13 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
             Duration(milliseconds: 2000 - timeTaken),
             () {
               isAuthorized
-                  ? emit(LoginUserAuthorized())
+                  ? emit(LoginUserAuthorized(properties))
                   : emit(LoginUserUnauthorized());
             },
           );
         } else {
           isAuthorized
-              ? emit(LoginUserAuthorized())
+              ? emit(LoginUserAuthorized(properties))
               : emit(LoginUserUnauthorized());
         }
       } on ClientException catch (e) {
