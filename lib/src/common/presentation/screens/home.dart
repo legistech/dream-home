@@ -1,4 +1,5 @@
 import 'package:dream_home/src/constants/screen.dart';
+import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/screens/fp.dart';
 import 'package:dream_home/src/features/user_profile/presentation/screens/profile.dart';
 import 'package:dream_home/src/theme/pellet.dart';
@@ -8,31 +9,33 @@ import 'package:iconly/iconly.dart';
 /// [HomeScreen] is the home page of the app.
 /// It contains a [BottomNavigationBar] to navigate between the screens.
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({super.key, required this.properties});
 
+  final List<Property> properties;
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-
-/// [screens] contains the list of screens to be displayed.
-/// [selectedIndex] is the index of the screen to be displayed.
-/// To add a new screen, add it to the [screens] list and add a new index to [selectedIndex].
-List<Widget> screens = [
-  const FeaturedPropertiesScreen(),
-  const Center(
-    child: Text('MapScreen'),
-  ),
-  const Center(
-    child: Text('InboxScreen'),
-  ),
-  const UserProfileScreen(),
-];
 
 int selectedIndex = 0;
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    /// [screens] contains the list of screens to be displayed.
+    /// [selectedIndex] is the index of the screen to be displayed.
+    /// To add a new screen, add it to the [screens] list and add a new index to [selectedIndex].
+    List<Widget> screens = [
+      FeaturedPropertiesScreen(
+        properties: widget.properties,
+      ),
+      const Center(
+        child: Text('MapScreen'),
+      ),
+      const Center(
+        child: Text('InboxScreen'),
+      ),
+      const UserProfileScreen(),
+    ];
     final width = ScreenSize.width(context);
     return Container(
       decoration: BoxDecoration(
