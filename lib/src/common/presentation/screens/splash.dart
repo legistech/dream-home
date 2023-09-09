@@ -25,8 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
     return BlocListener<LoginBloc, LoginState>(
       listener: (context, state) {
         if (state is LoginUserAuthorized) {
-          Navigator.of(context)
-              .pushNamedAndRemoveUntil('/home', (route) => false);
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              '/home', (route) => false,
+              arguments: {'properties': state.properties});
         } else if (state is LoginUserUnauthorized) {
           Navigator.of(context)
               .pushNamedAndRemoveUntil('/welcome', (route) => false);
