@@ -21,12 +21,18 @@ class GenerateRoutes {
           },
         );
       case '/home':
-        return PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const HomeScreen(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return FadeTransition(opacity: animation, child: child);
-          },
-        );
+        {
+          final args = settings.arguments as Map<String, dynamic>;
+          return PageRouteBuilder(
+            pageBuilder: (_, __, ___) => HomeScreen(
+              properties: args['properties'],
+            ),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(opacity: animation, child: child);
+            },
+          );
+        }
       case '/register':
         return PageRouteBuilder(
           pageBuilder: (_, __, ___) => const RegisterScreen(),
