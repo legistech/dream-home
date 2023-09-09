@@ -61,7 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 navigationBarItem(Icons.map_outlined, 1, "Map"),
                 SizedBox(width: width * 2),
                 navigationBarItem(IconlyLight.chat, 2, "Inbox"),
-                navigationBarItem(IconlyLight.user, 3, "Profile"),
+                navigationBarItem(IconlyLight.profile, 3, "Profile"),
               ],
             ),
           ),
