@@ -70,7 +70,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
                 (property) => Property.fromRecord(property),
               )
               .toList();
-          debugPrint(properties.first.address);
         }
         final timeTaken = timer.elapsedMilliseconds;
         Stopwatch().stop();
