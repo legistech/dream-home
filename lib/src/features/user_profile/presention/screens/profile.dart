@@ -1,6 +1,8 @@
-import 'package:dream_home/src/common/presentation/widgets/elevated_button.dart';
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/user_profile/application/blocs/profile_bloc/profile_bloc.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/profile_button.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/profile_tile.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,7 +30,7 @@ class UserProfileScreen extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(Icons.arrow_back_ios),
+                SizedBox(),
                 Text(
                   'Profile',
                   style: TextStyle(
@@ -51,13 +53,42 @@ class UserProfileScreen extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
+            const UserInfo(
+              text: 'hsbazr@gmail.com',
+              icon: Icons.mail,
+            ),
+            SizedBox(height: height * 2),
+            const ProfileTile(
+              leadingIcon: Icons.person,
+              trailingIcon: Icons.arrow_forward_ios,
+              text: 'Account Settings',
+            ),
+            SizedBox(height: height * 1),
+            const ProfileTile(
+              leadingIcon: Icons.person,
+              trailingIcon: Icons.arrow_forward_ios,
+              text: 'Notification Settings',
+            ),
+            SizedBox(height: height * 1),
+            const ProfileTile(
+              leadingIcon: Icons.person,
+              trailingIcon: Icons.arrow_forward_ios,
+              text: 'My Listings',
+            ),
+            SizedBox(height: height * 1),
+            const ProfileTile(
+              leadingIcon: Icons.person,
+              trailingIcon: Icons.arrow_forward_ios,
+              text: 'Help & Support',
+            ),
             const Spacer(),
-            CommonElevatedButton(
-                text: 'Logout',
-                onPressed: () {
-                  context.read<ProfileBloc>().add(ProfileLogoutButtonPressed());
-                }),
+            ProfileButton(
+              icon: Icons.logout,
+              text: 'Logout',
+              onPressed: () {
+                context.read<ProfileBloc>().add(ProfileLogoutButtonPressed());
+              },
+            ),
             SizedBox(height: height * 4),
           ],
         ),
