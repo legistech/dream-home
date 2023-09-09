@@ -1,6 +1,8 @@
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/user_profile/application/blocs/profile_bloc/profile_bloc.dart';
-import 'package:dream_home/src/theme/pellet.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/profile_button.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/profile_tile.dart';
+import 'package:dream_home/src/features/user_profile/presention/widgets/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -91,119 +93,6 @@ class UserProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class ProfileButton extends StatelessWidget {
-  const ProfileButton({
-    super.key,
-    required this.icon,
-    required this.text,
-    required this.onPressed,
-  });
-
-  final IconData icon;
-  final String text;
-  final Function() onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final height = ScreenSize.height(context);
-    final width = ScreenSize.width(context);
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ButtonStyle(
-        minimumSize: MaterialStatePropertyAll(
-          Size(width * 100, height * 5),
-        ),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(icon),
-          const SizedBox(width: 5),
-          Text(text),
-        ],
-      ),
-    );
-  }
-}
-
-class ProfileTile extends StatelessWidget {
-  const ProfileTile({
-    super.key,
-    this.onTap,
-    required this.leadingIcon,
-    required this.trailingIcon,
-    required this.text,
-  });
-
-  final Function()? onTap;
-  final IconData leadingIcon;
-  final IconData trailingIcon;
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    final height = ScreenSize.height(context);
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: height * 5,
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        decoration: BoxDecoration(
-          color: Pellet.kPrimaryColor,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              leadingIcon,
-              color: Pellet.kWhite,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              text,
-              style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Pellet.kWhite),
-            ),
-            const Spacer(),
-            Icon(
-              trailingIcon,
-              color: Pellet.kWhite,
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class UserInfo extends StatelessWidget {
-  const UserInfo({
-    super.key,
-    required this.text,
-    required this.icon,
-  });
-
-  final String text;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          color: Pellet.kDark.withOpacity(0.5),
-        ),
-        const SizedBox(width: 10),
-        Text(text),
-      ],
     );
   }
 }
