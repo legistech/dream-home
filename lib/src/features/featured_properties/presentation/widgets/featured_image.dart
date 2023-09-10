@@ -12,7 +12,7 @@ class FeaturedImage extends StatelessWidget {
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
     return Container(
-      height: height * 25,
+      height: height * 20,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: CachedNetworkImageProvider(imgUrl),
