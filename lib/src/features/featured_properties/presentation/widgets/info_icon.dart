@@ -18,8 +18,8 @@ class InfoIcon extends StatelessWidget {
       children: [
         Image.asset(
           asset,
-          height: 40,
-          width: 40,
+          height: 30,
+          width: 30,
         ),
         const SizedBox(width: 10),
         Column(
