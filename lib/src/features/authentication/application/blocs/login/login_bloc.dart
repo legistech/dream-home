@@ -1,7 +1,7 @@
 import 'package:dream_home/src/common/utils/extensions/client_exception.dart';
 import 'package:dream_home/src/features/authentication/data/repository/auth.dart';
 import 'package:dream_home/src/features/authentication/data/repository/validator.dart';
-import 'package:dream_home/src/features/featured_properties/data/properties.dart';
+import 'package:dream_home/src/features/featured_properties/data/repositories/properties.dart';
 import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +64,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final bool isAuthorized = await AuthRepo.isUserAuthorized;
         late List<Property> properties;
         if (isAuthorized) {
-          final record = await Properties.getProperties;
+          final record = await PropertiesRepo.getProperties;
           properties = record.items
               .map(
                 (property) => Property.fromRecord(property),
