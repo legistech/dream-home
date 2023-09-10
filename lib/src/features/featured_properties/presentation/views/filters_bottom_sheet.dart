@@ -18,7 +18,7 @@ class FiltersBottomSheet extends StatefulWidget {
 class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
   late final TextEditingController searchController;
 
-  // TODO: Remove dummy data after implementing bloc
+  // TODO: Move this to bloc after implementing it
   List<String> propertyType = [
     'Apartment',
     'Independent House',
