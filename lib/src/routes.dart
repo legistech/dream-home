@@ -49,7 +49,7 @@ class GenerateRoutes {
             },
           );
         }
-      case '/single-property':
+      case '/property-details':
         {
           final args = settings.arguments as Map<String, dynamic>;
           return PageRouteBuilder(
