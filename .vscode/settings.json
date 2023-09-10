@@ -3,5 +3,6 @@
             "Satoshi"
       ],
       "docify.commentService.docstringFormat": "Custom",
-      "docify.commentService.sidePanelReviewMode": false
+      "docify.commentService.sidePanelReviewMode": false,
+      "discord.enabled": true
 }
