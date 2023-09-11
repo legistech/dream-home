@@ -21,7 +21,7 @@ class FeaturedPropertiesScreen extends StatefulWidget {
 
 class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
   final String baseUrl = 'https://dream-home.pockethost.io/api/files/';
-  final List<String> filterChip = ['Buy', 'Rent', 'PG', 'Plot'];
+  final List<String> filterChip = ['Buy', 'Rent', 'Commercial', 'Furnished'];
   final selectedFilter = [0];
   late final TextEditingController _searchController;
 
@@ -57,7 +57,6 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
         ),
         SizedBox(height: height * 1),
         ChipList(
-          widgetSpacing: width * 1,
           listOfChipNames: filterChip,
           listOfChipIndicesCurrentlySeclected: selectedFilter,
           activeBgColorList: [Pellet.kPrimaryColor],
@@ -66,7 +65,6 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 8),
         ),
         SizedBox(height: height * 2),
         FeaturedImage(
