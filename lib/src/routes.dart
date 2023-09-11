@@ -1,13 +1,13 @@
+import 'package:dream_home/src/app.dart';
+import 'package:dream_home/src/common/presentation/screens/home.dart';
+import 'package:dream_home/src/common/presentation/screens/splash.dart';
+import 'package:dream_home/src/common/presentation/screens/welcome.dart';
+import 'package:dream_home/src/features/authentication/presentation/screens/login.dart';
+import 'package:dream_home/src/features/authentication/presentation/screens/register.dart';
+import 'package:dream_home/src/features/create_properties/presentation/screens/create_properties1.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/screens/single_property.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/screens/view_all.dart';
 import 'package:flutter/material.dart';
-
-import 'app.dart';
-import 'common/presentation/screens/home.dart';
-import 'common/presentation/screens/splash.dart';
-import 'common/presentation/screens/welcome.dart';
-import 'features/authentication/presentation/screens/login.dart';
-import 'features/authentication/presentation/screens/register.dart';
-import 'features/featured_properties/presentation/screens/single_property.dart';
-import 'features/featured_properties/presentation/screens/view_all.dart';
 
 /// [GenerateRoutes] class is used to generate routes for the app.
 /// To add a new route, add it to the switch statement in [onGenerateRoutes].
@@ -76,6 +76,13 @@ class GenerateRoutes {
             },
           );
         }
+      case '/create-property':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const CreateProperty(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       default:
         return MaterialPageRoute(builder: (_) => const DreamHome());
     }
