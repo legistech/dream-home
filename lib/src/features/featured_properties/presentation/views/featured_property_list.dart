@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dream_home/src/constants/screen.dart';
+import 'package:dream_home/src/features/featured_properties/data/repositories/helpers.dart';
 import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,7 @@ class FeaturedPropertyList extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            '₹ ${properties[index].propertyCost!}',
+                            '\$ ${HelperRepo.formatNumberWithSuffix(properties[index].propertyCost!)}',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
