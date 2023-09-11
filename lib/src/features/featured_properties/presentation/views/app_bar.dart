@@ -1,6 +1,7 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+
+import '../../../../theme/pellet.dart';
 
 class AppBarView extends StatelessWidget {
   const AppBarView({

@@ -1,8 +1,9 @@
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/features/authentication/application/blocs/login/login_bloc.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../constants/assets.dart';
+import '../../../features/authentication/application/blocs/login/login_bloc.dart';
+import '../../../theme/pellet.dart';
 
 /// [SplashScreen] appears every time when user opens the app.
 class SplashScreen extends StatefulWidget {

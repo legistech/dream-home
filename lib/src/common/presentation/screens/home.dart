@@ -1,10 +1,11 @@
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/screens/featured_properties.dart';
-import 'package:dream_home/src/features/user_profile/presentation/screens/profile.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+
+import '../../../constants/screen.dart';
+import '../../../features/featured_properties/domain/models/property.dart';
+import '../../../features/featured_properties/presentation/screens/featured_properties.dart';
+import '../../../features/user_profile/presentation/screens/profile.dart';
+import '../../../theme/pellet.dart';
 
 /// [HomeScreen] is the home page of the app.
 /// It contains a [BottomNavigationBar] to navigate between the screens.

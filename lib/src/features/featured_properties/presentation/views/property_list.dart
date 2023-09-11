@@ -1,7 +1,8 @@
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/property_card.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../../constants/screen.dart';
+import '../../domain/models/property.dart';
+import '../widgets/property_card.dart';
 
 class PropertyListView extends StatelessWidget {
   const PropertyListView({

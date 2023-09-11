@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/data/repositories/helpers.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
+import '../../data/repositories/helpers.dart';
+import '../../domain/models/property.dart';
 
 class PropertyCard extends StatelessWidget {
   const PropertyCard({

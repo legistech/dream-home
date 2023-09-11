@@ -1,5 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../../theme/pellet.dart';
 
 class FeaturedInfo extends StatelessWidget {
   const FeaturedInfo({

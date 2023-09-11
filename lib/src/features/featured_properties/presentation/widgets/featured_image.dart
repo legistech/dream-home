@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dream_home/src/constants/screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/screen.dart';
 
 class FeaturedImage extends StatelessWidget {
   const FeaturedImage(this.imgUrl, {super.key, required this.borderColor});

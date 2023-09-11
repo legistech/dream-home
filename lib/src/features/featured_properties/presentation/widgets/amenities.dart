@@ -1,6 +1,7 @@
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../theme/pellet.dart';
+import '../../domain/models/property.dart';
 
 class Amenities extends StatelessWidget {
   const Amenities({

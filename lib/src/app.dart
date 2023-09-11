@@ -1,6 +1,6 @@
-import 'package:dream_home/src/common/provider/bloc_provider.dart';
-import 'package:dream_home/src/routes.dart';
-import 'package:dream_home/src/theme/theme_data.dart';
+import 'common/provider/bloc_provider.dart';
+import 'routes.dart';
+import 'theme/theme_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

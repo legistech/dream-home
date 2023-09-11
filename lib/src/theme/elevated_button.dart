@@ -1,6 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
+import 'pellet.dart';
 
 /// [elevatedButtonTheme] contains the default theme for the elevated button.
 ButtonStyle elevatedButtonTheme() {

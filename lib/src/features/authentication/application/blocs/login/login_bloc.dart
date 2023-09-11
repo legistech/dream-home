@@ -1,12 +1,13 @@
-import 'package:dream_home/src/common/utils/extensions/client_exception.dart';
-import 'package:dream_home/src/features/authentication/data/repository/auth.dart';
-import 'package:dream_home/src/features/authentication/data/repository/validator.dart';
-import 'package:dream_home/src/features/featured_properties/data/repositories/properties.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pocketbase/pocketbase.dart';
+
+import '../../../../../common/utils/extensions/client_exception.dart';
+import '../../../../featured_properties/data/repositories/properties.dart';
+import '../../../../featured_properties/domain/models/property.dart';
+import '../../../data/repository/auth.dart';
+import '../../../data/repository/validator.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

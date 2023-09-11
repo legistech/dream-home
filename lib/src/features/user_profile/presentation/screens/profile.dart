@@ -1,10 +1,11 @@
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/user_profile/application/blocs/profile_bloc/profile_bloc.dart';
-import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_button.dart';
-import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_tile.dart';
-import 'package:dream_home/src/features/user_profile/presentation/widgets/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../constants/screen.dart';
+import '../../application/blocs/profile_bloc/profile_bloc.dart';
+import '../widgets/profile_button.dart';
+import '../widgets/profile_tile.dart';
+import '../widgets/user_info.dart';
 
 class UserProfileScreen extends StatelessWidget {
   const UserProfileScreen({super.key});

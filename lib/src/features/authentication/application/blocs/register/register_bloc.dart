@@ -1,9 +1,10 @@
-import 'package:dream_home/src/common/utils/extensions/client_exception.dart';
-import 'package:dream_home/src/features/authentication/data/repository/auth.dart';
-import 'package:dream_home/src/features/authentication/data/repository/validator.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pocketbase/pocketbase.dart';
+
+import '../../../../../common/utils/extensions/client_exception.dart';
+import '../../../data/repository/auth.dart';
+import '../../../data/repository/validator.dart';
 
 part 'register_event.dart';
 part 'register_state.dart';

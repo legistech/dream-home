@@ -1,17 +1,18 @@
-import 'package:dream_home/src/common/presentation/widgets/elevated_button.dart';
-import 'package:dream_home/src/common/presentation/widgets/show_error_snack.dart';
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/authentication/application/blocs/login/login_bloc.dart';
-import 'package:dream_home/src/features/authentication/presentation/views/forgot_pwd.dart';
-import 'package:dream_home/src/features/authentication/presentation/widgets/common_text_field.dart';
-import 'package:dream_home/src/features/authentication/presentation/widgets/login_subtitle.dart';
-import 'package:dream_home/src/features/authentication/presentation/widgets/login_title.dart';
-import 'package:dream_home/src/features/authentication/presentation/widgets/nav_query.dart';
-import 'package:dream_home/src/features/authentication/presentation/widgets/social_button.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../common/presentation/widgets/elevated_button.dart';
+import '../../../../common/presentation/widgets/show_error_snack.dart';
+import '../../../../constants/assets.dart';
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
+import '../../application/blocs/login/login_bloc.dart';
+import '../views/forgot_pwd.dart';
+import '../widgets/common_text_field.dart';
+import '../widgets/login_subtitle.dart';
+import '../widgets/login_title.dart';
+import '../widgets/nav_query.dart';
+import '../widgets/social_button.dart';
 
 /// [LoginScreen] is the screen where the user can login to the app.
 class LoginScreen extends StatefulWidget {

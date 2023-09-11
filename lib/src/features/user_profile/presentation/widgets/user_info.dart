@@ -1,5 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../theme/pellet.dart';
 
 class UserInfo extends StatelessWidget {
   const UserInfo({

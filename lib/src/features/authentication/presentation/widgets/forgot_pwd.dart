@@ -1,6 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../theme/pellet.dart';
 
 /// [SheetTitle] contains the title of bottom sheet.
 class SheetTitle extends StatelessWidget {
