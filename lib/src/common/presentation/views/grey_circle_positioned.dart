@@ -1,6 +1,7 @@
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../constants/screen.dart';
+import '../../../theme/pellet.dart';
 
 /// [GreyPositionedCircleBorder] is a grey circle border positioned at the
 /// bottom left of the welcome screen.

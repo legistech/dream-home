@@ -1,17 +1,18 @@
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/location.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/major_info.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/neighborhood_info.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/title.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/amenities.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/featured_image.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/info_icon.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/view_title.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+
+import '../../../../constants/assets.dart';
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
+import '../../domain/models/property.dart';
+import '../views/location.dart';
+import '../views/major_info.dart';
+import '../views/neighborhood_info.dart';
+import '../views/title.dart';
+import '../widgets/amenities.dart';
+import '../widgets/featured_image.dart';
+import '../widgets/info_icon.dart';
+import '../widgets/view_title.dart';
 
 class SinglePropertyScreen extends StatelessWidget {
   const SinglePropertyScreen({super.key, required this.property});

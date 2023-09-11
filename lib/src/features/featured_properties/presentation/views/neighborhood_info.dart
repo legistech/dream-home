@@ -1,6 +1,7 @@
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/info_icon.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/assets.dart';
+import '../widgets/info_icon.dart';
 
 class NeighborhoodDistanceView extends StatelessWidget {
   const NeighborhoodDistanceView({

@@ -1,6 +1,7 @@
-import 'package:dream_home/src/theme/elevated_button.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import 'elevated_button.dart';
+import 'pellet.dart';
 
 /// call [getThemeData] getter to get the material app theme data.
 ThemeData getThemeData() => ThemeData(

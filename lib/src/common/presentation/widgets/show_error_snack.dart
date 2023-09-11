@@ -1,5 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../theme/pellet.dart';
 
 /// Call [showErrorSnack] function inside scaffold's context to show error snack.
 SnackBar showErrorSnack(String message) {

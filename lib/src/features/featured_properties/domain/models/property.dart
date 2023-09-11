@@ -1,6 +1,7 @@
-import 'package:dream_home/src/common/domain/models/user.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:pocketbase/pocketbase.dart';
+
+import '../../../../common/domain/models/user.dart';
 
 part 'property.g.dart';
 

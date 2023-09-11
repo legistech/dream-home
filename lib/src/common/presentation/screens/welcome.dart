@@ -1,14 +1,15 @@
-import 'package:dream_home/src/common/presentation/views/cyan_circle_positioned.dart';
-import 'package:dream_home/src/common/presentation/views/grey_circle_positioned.dart';
-import 'package:dream_home/src/common/presentation/widgets/description_title.dart';
-import 'package:dream_home/src/common/presentation/widgets/elevated_button.dart';
-import 'package:dream_home/src/common/presentation/widgets/welcome_description.dart';
-import 'package:dream_home/src/common/presentation/widgets/welcome_image.dart';
-import 'package:dream_home/src/common/presentation/widgets/welcome_title.dart';
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../constants/assets.dart';
+import '../../../constants/screen.dart';
+import '../../../theme/pellet.dart';
+import '../views/cyan_circle_positioned.dart';
+import '../views/grey_circle_positioned.dart';
+import '../widgets/description_title.dart';
+import '../widgets/elevated_button.dart';
+import '../widgets/welcome_description.dart';
+import '../widgets/welcome_image.dart';
+import '../widgets/welcome_title.dart';
 
 /// [WelcomeScreen] is the screen where the user lands when they open the app
 /// if they are not logged in already.

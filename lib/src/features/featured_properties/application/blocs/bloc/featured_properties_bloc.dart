@@ -1,7 +1,8 @@
-import 'package:dream_home/src/features/featured_properties/data/repositories/filters.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../data/repositories/filters.dart';
+import '../../../domain/models/property.dart';
 
 part 'featured_properties_event.dart';
 part 'featured_properties_state.dart';

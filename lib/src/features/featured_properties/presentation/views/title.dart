@@ -1,6 +1,7 @@
-import 'package:dream_home/src/features/featured_properties/data/repositories/helpers.dart';
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:flutter/material.dart';
+
+import '../../data/repositories/helpers.dart';
+import '../../domain/models/property.dart';
 
 class TitleView extends StatelessWidget {
   const TitleView({

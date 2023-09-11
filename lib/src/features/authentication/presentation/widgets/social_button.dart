@@ -1,5 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../theme/pellet.dart';
 
 /// [SocialButton] is used in both login and register pages.
 /// It is used to login or register using third party apps.

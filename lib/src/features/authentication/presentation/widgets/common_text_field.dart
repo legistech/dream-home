@@ -1,5 +1,6 @@
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../theme/pellet.dart';
 
 /// [CommonAuthTextField] is a common text field used in the authentication feature
 class CommonAuthTextField extends StatelessWidget {

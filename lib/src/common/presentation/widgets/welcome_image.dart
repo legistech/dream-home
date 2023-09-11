@@ -1,6 +1,7 @@
-import 'package:dream_home/src/constants/assets.dart';
-import 'package:dream_home/src/constants/screen.dart';
 import 'package:flutter/widgets.dart';
+
+import '../../../constants/assets.dart';
+import '../../../constants/screen.dart';
 
 class WelcomeImage extends StatelessWidget {
   const WelcomeImage(

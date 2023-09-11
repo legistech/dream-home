@@ -1,5 +1,6 @@
-import 'package:dream_home/src/db/pocketbase.dart';
 import 'package:pocketbase/pocketbase.dart';
+
+import '../../../../db/pocketbase.dart';
 
 class PropertiesRepo {
   static Future<ResultList<RecordModel>> get getProperties async {

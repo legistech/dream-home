@@ -1,4 +1,4 @@
-import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
+import '../../domain/models/property.dart';
 
 /// [Filter]'s class is used to filter properties based on different matching criteria
 class Filter {

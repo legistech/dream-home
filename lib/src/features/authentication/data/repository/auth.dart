@@ -1,6 +1,7 @@
-import 'package:dream_home/src/db/pocketbase.dart';
 import 'package:flutter/material.dart';
 import 'package:pocketbase/pocketbase.dart';
+
+import '../../../../db/pocketbase.dart';
 
 /// Use [AuthRepo] to handle all the authentication related operations.
 class AuthRepo {
