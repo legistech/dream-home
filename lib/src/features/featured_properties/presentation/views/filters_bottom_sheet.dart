@@ -1,8 +1,8 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/screens/featured_properties.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/options_info.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/options_title.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
