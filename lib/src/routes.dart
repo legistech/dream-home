@@ -1,3 +1,4 @@
+import 'package:dream_home/src/features/create_properties/presentation/screens/create_properties.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -76,6 +77,13 @@ class GenerateRoutes {
             },
           );
         }
+      case '/create-property':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const CreatePropertyScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       default:
         return MaterialPageRoute(builder: (_) => const DreamHome());
     }
