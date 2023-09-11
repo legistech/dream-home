@@ -1,4 +1,5 @@
 import 'package:chip_list/chip_list.dart';
+import 'package:dream_home/src/constants/assets.dart';
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/application/blocs/bloc/featured_properties_bloc.dart';
 import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
@@ -89,7 +90,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
           SizedBox(height: height * 2),
           if (filteredProperties.isNotEmpty) ...[
             FeaturedImage(
-              '$baseUrl/${filteredProperties.first.collectionId}/${filteredProperties.first.id}/${filteredProperties.first.images!.first}',
+              Asset.featuredImage,
               borderColor: Pellet.kPrimaryColor,
             ),
             SizedBox(height: height * 2),
