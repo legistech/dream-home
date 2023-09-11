@@ -14,4 +14,6 @@ class Asset {
   static String get calculatorIcon => 'assets/icons/calculator.png';
   static String get increaseIcon => 'assets/icons/increase.png';
   static String get decreaseIcon => 'assets/icons/decrease.png';
+  static String get featuredImage =>
+      'https://source.unsplash.com/480x480/?property';
 }

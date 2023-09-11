@@ -22,7 +22,6 @@ class AppBarView extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        IconButton(onPressed: () {}, icon: const Icon(Icons.favorite_outline)),
         IconButton(
           onPressed: () {},
           icon: const Badge(

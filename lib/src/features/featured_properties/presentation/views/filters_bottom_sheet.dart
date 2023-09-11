@@ -1,8 +1,8 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/screens/featured_properties.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/options_info.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/options_title.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
@@ -148,12 +148,15 @@ class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
               inactiveTextColorList: [Pellet.kDark],
             ),
             const OptionsTitle('Budget'),
-            OptionsInfo(data: selectedBudget),
+            OptionsInfo(
+              data: selectedBudget,
+              leading: '\$',
+              trailing: 'M+',
+            ),
             RangeSlider(
               max: 50,
               values: RangeValues(selectedBudget[0], selectedBudget[1]),
               onChanged: (value) {
-                // TODO: Remove setState(){} after implementing bloc
                 setState(() {
                   selectedBudget[0] = value.start;
                   selectedBudget[1] = value.end;
@@ -162,7 +165,11 @@ class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
               activeColor: Pellet.kPrimaryColor,
             ),
             const OptionsTitle('Built-up Area'),
-            OptionsInfo(data: selectedBuiltUpAreas),
+            OptionsInfo(
+              data: selectedBuiltUpAreas,
+              leading: 'sqft',
+              trailing: 'sqft+',
+            ),
             RangeSlider(
               max: 5000,
               values:

@@ -21,7 +21,7 @@ class TitleView extends StatelessWidget {
               fontWeight: FontWeight.w600,
             )),
         Text(
-          HelperRepo.formatNumberWithSuffix(property.propertyCost!),
+          '\$${HelperRepo.formatNumberWithSuffix(property.propertyCost!)}',
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
