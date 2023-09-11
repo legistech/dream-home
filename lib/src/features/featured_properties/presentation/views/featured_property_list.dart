@@ -88,7 +88,7 @@ class FeaturedPropertyList extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            '\$ ${HelperRepo.formatNumberWithSuffix(properties[index].propertyCost!)}',
+                            '\$${HelperRepo.formatNumberWithSuffix(properties[index].propertyCost!)}',
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
