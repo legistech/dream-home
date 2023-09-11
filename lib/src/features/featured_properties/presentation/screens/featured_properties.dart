@@ -40,7 +40,6 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
   @override
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
-    final width = ScreenSize.width(context);
 
     return Column(
       children: [
