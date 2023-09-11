@@ -52,7 +52,15 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       try {
         final email = event.email, password = event.password;
         await AuthRepo.login(email, password);
-        emit(LoginSuccessful());
+        late List<Property> properties;
+
+        final record = await PropertiesRepo.getProperties;
+        properties = record.items
+            .map(
+              (property) => Property.fromRecord(property),
+            )
+            .toList();
+        emit(LoginSuccessful(properties));
       } on ClientException catch (e) {
         emit(LoginFailure(e.errorMessage));
       }
