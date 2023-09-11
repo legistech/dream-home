@@ -49,7 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Pellet.kPrimaryColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/create-property');
+          },
           child: const Icon(Icons.add),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
