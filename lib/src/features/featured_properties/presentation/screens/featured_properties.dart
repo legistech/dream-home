@@ -123,7 +123,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
                 Icon(IconlyLight.filter, size: 50, color: Pellet.kDark),
                 const SizedBox(height: 16),
                 const Text(
-                  'No properties found',
+                  'Nothing to see here',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
