@@ -151,7 +151,7 @@ class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
             OptionsInfo(
               data: selectedBudget,
               leading: '\$',
-              trailing: 'Cr+',
+              trailing: 'M+',
             ),
             RangeSlider(
               max: 50,
