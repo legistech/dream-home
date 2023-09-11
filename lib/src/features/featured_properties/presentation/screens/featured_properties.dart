@@ -102,7 +102,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
                   context,
                   '/view-all',
                   arguments: {
-                    'properties': filteredProperties,
+                    'properties': widget.properties,
                   },
                 );
               },
