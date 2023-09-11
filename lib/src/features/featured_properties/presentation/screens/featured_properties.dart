@@ -118,8 +118,8 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
                     ],
                   );
                 }).toList(),
+                SizedBox(height: height * 2),
               ] else ...[
-                const Spacer(),
                 Icon(IconlyLight.filter, size: 50, color: Pellet.kDark),
                 const SizedBox(height: 16),
                 const Text(
@@ -129,7 +129,6 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Spacer(),
               ],
             ],
           ),
