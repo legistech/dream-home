@@ -4,8 +4,12 @@ class OptionsInfo extends StatelessWidget {
   const OptionsInfo({
     super.key,
     required this.data,
+    required this.leading,
+    required this.trailing,
   });
 
+  final String leading;
+  final String trailing;
   final List<double> data;
 
   @override
@@ -14,12 +18,12 @@ class OptionsInfo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          '\$ ${data[0].toInt()}',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          '${data[0].toInt()} $leading',
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         Text(
-          '\$ ${data[1].toInt()}',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          '${data[1].toInt()} $trailing',
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ),
       ],
     );
