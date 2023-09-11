@@ -19,7 +19,11 @@ final class LoginLoading extends LoginState {}
 
 final class LoginButtonClickable extends LoginState {}
 
-final class LoginSuccessful extends LoginState {}
+final class LoginSuccessful extends LoginState {
+  final List<Property> properties;
+
+  const LoginSuccessful(this.properties);
+}
 
 final class LoginUserAuthorized extends LoginState {
   final List<Property> properties;
