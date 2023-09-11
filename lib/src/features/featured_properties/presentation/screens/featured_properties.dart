@@ -1,9 +1,9 @@
+import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/domain/models/property.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/views/filters_bottom_sheet.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/views/property_list.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/common_choice_chip.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/featured_image.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/featured_info.dart';
 import 'package:dream_home/src/theme/pellet.dart';
@@ -21,7 +21,8 @@ class FeaturedPropertiesScreen extends StatefulWidget {
 
 class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
   final String baseUrl = 'https://dream-home.pockethost.io/api/files/';
-
+  final List<String> filterChip = ['Buy', 'Rent', 'PG', 'Plot'];
+  final selectedFilter = [0];
   late final TextEditingController _searchController;
 
   @override
@@ -39,6 +40,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
   @override
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
+    final width = ScreenSize.width(context);
 
     return Column(
       children: [
@@ -54,27 +56,17 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
           ],
         ),
         SizedBox(height: height * 1),
-        //! Bug 1: The [CommonFeaturedChoiceChip] label color is not as expected.
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            CommonFeaturedChoiceChip(
-              text: 'Buy',
-              isSelected: true,
-            ),
-            CommonFeaturedChoiceChip(
-              text: 'Rent',
-              isSelected: false,
-            ),
-            CommonFeaturedChoiceChip(
-              text: 'PG',
-              isSelected: false,
-            ),
-            CommonFeaturedChoiceChip(
-              text: 'Plot',
-              isSelected: false,
-            ),
-          ],
+        ChipList(
+          widgetSpacing: width * 1,
+          listOfChipNames: filterChip,
+          listOfChipIndicesCurrentlySeclected: selectedFilter,
+          activeBgColorList: [Pellet.kPrimaryColor],
+          inactiveTextColorList: [Pellet.kDark],
+          style: const TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 8),
         ),
         SizedBox(height: height * 2),
         FeaturedImage(
