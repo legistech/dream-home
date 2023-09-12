@@ -34,13 +34,12 @@ class ImageViewer extends StatelessWidget {
               ),
             ),
           ),
-          InteractiveViewer(
-            maxScale: 5,
-            child: Center(
-              child: SizedBox(
-                height: height * 50,
-                child: Hero(
-                  tag: tag,
+          Center(
+            child: SizedBox(
+              height: height * 50,
+              child: Hero(
+                tag: tag,
+                child: InteractiveViewer(
                   child: Container(
                     decoration: BoxDecoration(
                       image: DecorationImage(
