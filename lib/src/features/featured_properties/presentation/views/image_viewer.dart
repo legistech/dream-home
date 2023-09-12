@@ -13,6 +13,24 @@ class ImageViewer extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+          Center(
+            child: SizedBox(
+              height: height * 100,
+              child: Hero(
+                tag: tag,
+                child: InteractiveViewer(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: CachedNetworkImageProvider(imageUrl),
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
           Positioned(
             top: height * 5,
             right: 0,
@@ -30,24 +48,6 @@ class ImageViewer extends StatelessWidget {
                 child: const Icon(
                   Icons.close,
                   color: Colors.white,
-                ),
-              ),
-            ),
-          ),
-          Center(
-            child: SizedBox(
-              height: height * 50,
-              child: Hero(
-                tag: tag,
-                child: InteractiveViewer(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: CachedNetworkImageProvider(imageUrl),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
