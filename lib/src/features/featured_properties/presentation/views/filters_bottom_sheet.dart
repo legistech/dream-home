@@ -139,6 +139,7 @@ class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
             CommonFeaturesSearchField(
               searchController: searchController,
               borderColor: Pellet.kGrey,
+              hintText: 'Search for anything',
             ),
             SizedBox(height: height * 1),
             const OptionsTitle('Property Type'),

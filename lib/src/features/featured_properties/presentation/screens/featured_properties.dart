@@ -62,6 +62,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
               CommonFeaturesSearchField(
                 showFilters: true,
                 searchController: _searchController,
+                hintText: 'Search for anything',
               ),
               SizedBox(height: height * 1),
               ChipList(

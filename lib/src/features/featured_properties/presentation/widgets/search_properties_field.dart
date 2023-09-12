@@ -11,11 +11,13 @@ class CommonFeaturesSearchField extends StatelessWidget {
     this.showFilters = false,
     required TextEditingController searchController,
     this.borderColor = Colors.transparent,
+    required this.hintText,
   }) : _searchController = searchController;
 
   final TextEditingController _searchController;
   final bool showFilters;
   final Color borderColor;
+  final String hintText;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class CommonFeaturesSearchField extends StatelessWidget {
         onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-          hintText: 'Search for anything',
+          hintText: hintText,
           filled: true,
           fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
