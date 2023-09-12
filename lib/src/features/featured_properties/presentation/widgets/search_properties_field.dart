@@ -12,12 +12,14 @@ class CommonFeaturesSearchField extends StatelessWidget {
     required TextEditingController searchController,
     this.borderColor = Colors.transparent,
     required this.hintText,
+    this.showPrefixIcon = true,
   }) : _searchController = searchController;
 
   final TextEditingController _searchController;
   final bool showFilters;
   final Color borderColor;
   final String hintText;
+  final bool showPrefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +49,12 @@ class CommonFeaturesSearchField extends StatelessWidget {
               width: 2.0,
             ),
           ),
-          prefixIcon: Icon(
-            IconlyLight.search,
-            color: Pellet.kDark,
-          ),
+          prefixIcon: showPrefixIcon
+              ? Icon(
+                  IconlyLight.search,
+                  color: Pellet.kDark,
+                )
+              : null,
           suffixIcon: showFilters
               ? IconButton(
                   onPressed: () {
