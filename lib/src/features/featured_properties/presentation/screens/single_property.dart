@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/full_screen_image_viewer.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/views/image_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -76,7 +76,7 @@ class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: ((context) => FullScreenImage(
+                          builder: ((context) => ImageViewer(
                                 imageUrl: featuredImage,
                                 tag: widget.property.id!,
                               )),
