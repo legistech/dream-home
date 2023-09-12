@@ -17,7 +17,7 @@ class FeaturedImage extends StatelessWidget {
       decoration: BoxDecoration(
         image: DecorationImage(
           image: CachedNetworkImageProvider(imgUrl),
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         ),
         borderRadius: const BorderRadius.all(Radius.circular(16.0)),
         border: Border.all(

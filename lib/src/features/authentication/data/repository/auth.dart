@@ -38,7 +38,6 @@ class AuthRepo {
   static Future<RecordModel> register(
       String email, String name, String password) async {
     final pb = await PocketBaseInstance.instance;
-    print('Email: $email, Name: $name, Password: $password');
     try {
       final record = await pb.collection('users').create(body: {
         'email': email,

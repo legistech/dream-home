@@ -8,7 +8,7 @@ class Pellet {
   static Color get kDarkTextColor => const Color(0xFF004267);
   static Color get kLightTextColor => const Color(0xFF004267);
   static Color get kWhite => const Color(0xFFFFFFFF);
-  static Color get kDark => const Color.fromARGB(255, 27, 27, 28);
+  static Color get kDark => const Color(0xff3e3a3a);
   static Color get kGrey => const Color(0xFF808080);
 
   /// [kBackgroundGradient] is used to set the background gradient for the app.

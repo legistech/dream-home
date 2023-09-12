@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dream_home/src/features/featured_properties/presentation/views/image_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -14,15 +16,30 @@ import '../widgets/featured_image.dart';
 import '../widgets/info_icon.dart';
 import '../widgets/view_title.dart';
 
-class SinglePropertyScreen extends StatelessWidget {
+class SinglePropertyScreen extends StatefulWidget {
   const SinglePropertyScreen({super.key, required this.property});
 
   final Property property;
+
+  @override
+  State<SinglePropertyScreen> createState() => _SinglePropertyScreenState();
+}
+
+class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
   final String baseUrl = 'https://dream-home.pockethost.io/api/files/';
+  String featuredImage = '';
+
+  @override
+  void initState() {
+    super.initState();
+    featuredImage =
+        '$baseUrl/${widget.property.collectionId}/${widget.property.id}/${widget.property.images!.first}';
+  }
 
   @override
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
+    final width = ScreenSize.width(context);
     return Container(
       decoration: BoxDecoration(
         gradient: Pellet.kBackgroundGradient,
@@ -53,30 +70,86 @@ class SinglePropertyScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Hero(
-                  tag: property.id!,
-                  child: FeaturedImage(
-                    '$baseUrl/${property.collectionId}/${property.id}/${property.images!.first}',
-                    borderColor: Pellet.kWhite,
+                  tag: widget.property.id!,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => ImageViewer(
+                                imageUrl: featuredImage,
+                                tag: widget.property.id!,
+                              )),
+                        ),
+                      );
+                    },
+                    child: FeaturedImage(
+                      featuredImage,
+                      borderColor: Pellet.kWhite,
+                    ),
                   ),
                 ),
-                SizedBox(height: height * 2),
-                TitleView(property: property),
                 SizedBox(height: height * 1),
-                LocationView(property: property),
+                SizedBox(
+                  height: height * 10,
+                  width: width * 100,
+                  child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: ((context, index) {
+                        final currentImage =
+                            '$baseUrl/${widget.property.collectionId}/${widget.property.id}/${widget.property.images![index]}';
+                        return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              featuredImage = currentImage;
+                            });
+                          },
+                          child: Container(
+                            height: height * 10,
+                            width: width * 30,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: CachedNetworkImageProvider(
+                                  currentImage,
+                                ),
+                                fit: BoxFit.fill,
+                              ),
+                              borderRadius: const BorderRadius.all(
+                                Radius.circular(16),
+                              ),
+                              border: Border.all(
+                                color: featuredImage == currentImage
+                                    ? Pellet.kPrimaryColor
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                      separatorBuilder: (context, index) => const SizedBox(
+                            width: 10,
+                          ),
+                      itemCount: widget.property.images!.length),
+                ),
                 SizedBox(height: height * 1),
-                MajorInfoView(property: property),
+                TitleView(property: widget.property),
+                SizedBox(height: height * 1),
+                LocationView(property: widget.property),
+                SizedBox(height: height * 1),
+                MajorInfoView(property: widget.property),
                 SizedBox(height: height * 1),
                 const ViewTitle('Description'),
                 SizedBox(height: height * 1),
                 Text(
-                  property.propertyDetail!,
+                  widget.property.propertyDetail!,
                   style: const TextStyle(
                     fontSize: 14,
                   ),
                 ),
                 const ViewTitle('Amenities'),
                 SizedBox(height: height * 1),
-                Amenities(property: property),
+                Amenities(property: widget.property),
                 SizedBox(height: height * 1),
                 const ViewTitle('Explore Neighborhood'),
                 SizedBox(height: height * 1),
@@ -109,9 +182,9 @@ class SinglePropertyScreen extends StatelessWidget {
                 const ViewTitle('Contact Agent'),
                 SizedBox(height: height * 1),
                 InfoIcon(
-                    title: property.expand!.createdBy!.name!,
+                    title: widget.property.expand!.createdBy!.name!,
                     asset: Asset.appleLogo,
-                    subtitle: property.userStatus!),
+                    subtitle: widget.property.userStatus!),
                 SizedBox(height: height * 5),
               ],
             ),

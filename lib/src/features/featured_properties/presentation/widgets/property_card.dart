@@ -38,7 +38,7 @@ class PropertyCard extends StatelessWidget {
               Hero(
                 tag: property.id!,
                 child: Container(
-                  height: height * 13,
+                  height: height * 12,
                   width: width * 30,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -63,7 +63,9 @@ class PropertyCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      property.propertyName!,
+                      property.propertyName!.length > 20
+                          ? '${property.propertyName!.substring(0, 20)}...'
+                          : property.propertyName!,
                       style: TextStyle(
                         color: Pellet.kDark,
                         fontSize: 17,

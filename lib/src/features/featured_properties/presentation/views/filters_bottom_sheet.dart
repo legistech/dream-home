@@ -140,6 +140,7 @@ class _FiltersBottomSheetState extends State<FiltersBottomSheet> {
               searchController: searchController,
               borderColor: Pellet.kGrey,
             ),
+            SizedBox(height: height * 1),
             const OptionsTitle('Property Type'),
             ChipList(
               listOfChipNames: propertyType,
