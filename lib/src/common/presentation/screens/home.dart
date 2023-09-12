@@ -1,3 +1,4 @@
+import 'package:dream_home/src/features/chatting/presentation/screens/chats.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -32,9 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
       const Center(
         child: Text('MapScreen'),
       ),
-      const Center(
-        child: Text('InboxScreen'),
-      ),
+      const ChatsScreen(),
       const UserProfileScreen(),
     ];
     final width = ScreenSize.width(context);
