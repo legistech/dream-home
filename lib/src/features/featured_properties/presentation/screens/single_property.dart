@@ -117,6 +117,12 @@ class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(16),
                               ),
+                              border: Border.all(
+                                color: featuredImage == currentImage
+                                    ? Pellet.kPrimaryColor
+                                    : Colors.transparent,
+                                width: 2,
+                              ),
                             ),
                           ),
                         );
