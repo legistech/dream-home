@@ -1,5 +1,6 @@
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/screens/fp.dart';
+import 'package:dream_home/src/features/emi_calculator/presentation/screens/emi_calculator.dart';
 import 'package:dream_home/src/features/user_profile/presention/screens/profile.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
@@ -22,9 +23,7 @@ List<Widget> screens = [
   const Center(
     child: Text('MapScreen'),
   ),
-  const Center(
-    child: Text('InboxScreen'),
-  ),
+  const EmiCalculator(),
   const UserProfileScreen(),
 ];
 
