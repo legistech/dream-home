@@ -1,4 +1,6 @@
+import 'package:dream_home/src/features/chatting/chats/chats_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../../../constants/screen.dart';
@@ -18,6 +20,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
   @override
   void initState() {
     super.initState();
+    context.read<ChatsBloc>().add(ChatsLoad());
     searchController = TextEditingController();
   }
 
@@ -36,7 +39,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Icon(Icons.arrow_back_ios),
+            const SizedBox(),
             Text(
               'Chats',
               style: TextStyle(
@@ -59,49 +62,59 @@ class _ChatsScreenState extends State<ChatsScreen> {
           hintText: 'Search for chats',
         ),
         SizedBox(height: height * 2),
-        SizedBox(
-          height: height * 66,
-          child: ListView.builder(
-              padding: const EdgeInsets.all(0),
-              itemBuilder: (context, index) {
-                return Card(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(16),
-                    ),
-                  ),
-                  child: ListTile(
-                    trailing: Column(
-                      children: [
-                        const Text('12:30'),
-                        const SizedBox(height: 5),
-                        CircleAvatar(
-                          backgroundColor: Pellet.kPrimaryColor,
-                          radius: 10,
-                          child: Text(
-                            '2',
-                            style: TextStyle(
-                              color: Pellet.kWhite,
-                              fontSize: 12,
+        BlocBuilder<ChatsBloc, ChatsState>(
+          builder: (context, state) {
+            return state is ChatsLoaded
+                ? SizedBox(
+                    height: height * 66,
+                    child: ListView.builder(
+                        padding: const EdgeInsets.all(0),
+                        itemBuilder: (context, index) {
+                          return Card(
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(16),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    title: const Text(
-                      'John Doe',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: const Text('Perfection is achieved not when..'),
-                    leading: CircleAvatar(
-                      backgroundColor: Pellet.kPrimaryColor.withOpacity(0.5),
-                    ),
-                  ),
-                );
-              },
-              itemCount: 10),
+                            child: ListTile(
+                              trailing: Column(
+                                children: [
+                                  const Text('12:30'),
+                                  const SizedBox(height: 5),
+                                  CircleAvatar(
+                                    backgroundColor: Pellet.kPrimaryColor,
+                                    radius: 10,
+                                    child: Text(
+                                      '2',
+                                      style: TextStyle(
+                                        color: Pellet.kWhite,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              title: Text(
+                                state.chats[index].expand!.users![index].name!,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              subtitle: const Text(
+                                  'Perfection is achieved not when..'),
+                              leading: CircleAvatar(
+                                backgroundColor:
+                                    Pellet.kPrimaryColor.withOpacity(0.5),
+                              ),
+                            ),
+                          );
+                        },
+                        itemCount: state.chats.length),
+                  )
+                : state is ChatsLoading
+                    ? const CircularProgressIndicator()
+                    : const SizedBox();
+          },
         ),
       ],
     );
