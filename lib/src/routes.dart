@@ -1,4 +1,4 @@
-import 'package:dream_home/src/features/chatting/presentation/create_chat.dart';
+import 'package:dream_home/src/features/chatting/presentation/screens/create_chat.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
