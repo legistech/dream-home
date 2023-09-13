@@ -1,32 +1,19 @@
-import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/presentation/screens/view2.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
 import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_button.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
-class CreatePropertyScreen extends StatefulWidget {
-  const CreatePropertyScreen({super.key});
+class View3 extends StatefulWidget {
+  const View3({super.key});
 
   @override
-  State<CreatePropertyScreen> createState() => _CreatePropertyScreenState();
+  State<View3> createState() => _View3State();
 }
 
-class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
+class _View3State extends State<View3> {
   final numberController = TextEditingController();
-  List<String> userStatus = [
-    'Owner',
-    'Agent',
-    'Builder',
-  ];
-  List<String> sellingStatus = [
-    'Sell',
-    'Rent/Lease',
-  ];
-  final int selecteduserStatus = 0;
-  final int selectedSellingStatus = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +35,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'step 1 of 3',
+                'step 3 of 3',
                 style: TextStyle(
                   fontSize: 15,
                 ),
@@ -57,7 +44,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 height: 10,
               ),
               const LinearProgressIndicator(
-                value: 0.33,
+                value: 1,
                 minHeight: 5,
                 borderRadius: BorderRadius.all(Radius.circular(20)),
                 valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF004267)),
@@ -67,7 +54,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 height: 10,
               ),
               const Text(
-                'Add Basic Details:',
+                'Add Location Details:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 20,
@@ -77,7 +64,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 height: 5,
               ),
               Text(
-                'your intent and contact details',
+                'Address, Photos and videos',
                 style: TextStyle(
                   fontSize: 15,
                   color: Pellet.kDark,
@@ -87,47 +74,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 height: height * 2,
               ),
               const Text(
-                'You are:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-              SizedBox(
-                height: height * 1,
-              ),
-              ChipList(
-                listOfChipNames: userStatus,
-                listOfChipIndicesCurrentlySeclected: [selecteduserStatus],
-                inactiveBgColorList: [Pellet.kSecondaryColor],
-                activeBgColorList: [Pellet.kPrimaryColor],
-                inactiveTextColorList: [Pellet.kDark],
-              ),
-              SizedBox(
-                height: height * 1,
-              ),
-              const Text(
-                'You are here to:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
-              ),
-              SizedBox(
-                height: height * 1,
-              ),
-              ChipList(
-                listOfChipNames: sellingStatus,
-                listOfChipIndicesCurrentlySeclected: [selectedSellingStatus],
-                inactiveBgColorList: [Pellet.kSecondaryColor],
-                activeBgColorList: [Pellet.kPrimaryColor],
-                inactiveTextColorList: [Pellet.kDark],
-              ),
-              SizedBox(
-                height: height * 1,
-              ),
-              const Text(
-                'Your contact details:',
+                'Property Name:',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -141,6 +88,38 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 hintText: '',
                 showPrefixIcon: false,
               ),
+              SizedBox(
+                height: height * 1,
+              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Column(
+              //       children: [
+              //         const Text(
+              //           'You are here to:',
+              //           style: TextStyle(
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 18,
+              //           ),
+              //         ),
+              //         Card(child: TextFormField()),
+              //       ],
+              //     ),
+              //     Column(
+              //       children: [
+              //         const Text(
+              //           'Your contact details:',
+              //           style: TextStyle(
+              //             fontWeight: FontWeight.bold,
+              //             fontSize: 18,
+              //           ),
+              //         ),
+              //         Card(child: TextFormField()),
+              //       ],
+              //     ),
+              //   ],
+              // ),
               SizedBox(
                 height: height * 1,
               ),
@@ -174,10 +153,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 icon: Icons.navigate_next,
                 text: 'Next',
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => const View2()));
+                  Navigator.pushNamed(context, '/featured-properties');
                 }),
           ),
         ),
