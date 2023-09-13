@@ -54,8 +54,8 @@ class _ChatsScreenState extends State<ChatsScreen> {
         ),
         SizedBox(height: height * 2),
         SizedBox(
-          height: height * 65,
-          child: ListView.separated(
+          height: height * 66,
+          child: ListView.builder(
               padding: const EdgeInsets.all(0),
               itemBuilder: (context, index) {
                 return Card(
@@ -65,6 +65,23 @@ class _ChatsScreenState extends State<ChatsScreen> {
                     ),
                   ),
                   child: ListTile(
+                    trailing: Column(
+                      children: [
+                        const Text('12:30'),
+                        const SizedBox(height: 5),
+                        CircleAvatar(
+                          backgroundColor: Pellet.kPrimaryColor,
+                          radius: 10,
+                          child: Text(
+                            '2',
+                            style: TextStyle(
+                              color: Pellet.kWhite,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                     title: const Text(
                       'John Doe',
                       style: TextStyle(
@@ -77,9 +94,6 @@ class _ChatsScreenState extends State<ChatsScreen> {
                     ),
                   ),
                 );
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(height: 5);
               },
               itemCount: 10),
         ),
