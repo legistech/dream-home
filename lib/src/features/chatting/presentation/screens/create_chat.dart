@@ -39,6 +39,7 @@ class _CreateChatScreenState extends State<CreateChatScreen> {
       child: BlocConsumer<CreateChatBloc, CreateChatState>(
         listener: (context, state) {
           if (state is CreateChatCreated) {
+            // TODO: Navigate to chat screen after implementing chat screen
             Navigator.pop(context);
           } else if (state is CreateChatError) {
             ScaffoldMessenger.of(context)
