@@ -1,4 +1,5 @@
 import 'package:dream_home/src/features/chatting/presentation/screens/create_chat.dart';
+import 'package:dream_home/src/features/chatting/presentation/screens/messages.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -84,6 +85,19 @@ class GenerateRoutes {
             return FadeTransition(opacity: animation, child: child);
           },
         );
+      case '/messages':
+        {
+          final args = settings.arguments as Map<String, dynamic>;
+          return PageRouteBuilder(
+            pageBuilder: (_, __, ___) =>  MessagesScreen(
+              messages: args['messages'],
+            ),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(opacity: animation, child: child);
+            },
+          );
+        }
       default:
         return MaterialPageRoute(builder: (_) => const DreamHome());
     }
