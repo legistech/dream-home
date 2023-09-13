@@ -1,8 +1,8 @@
 import 'package:dream_home/src/common/presentation/widgets/elevated_button.dart';
 import 'package:dream_home/src/common/presentation/widgets/show_error_snack.dart';
 import 'package:dream_home/src/constants/screen.dart';
+import 'package:dream_home/src/features/chatting/application/blocs/chats/chats_bloc.dart';
 import 'package:dream_home/src/features/chatting/application/blocs/create_chat/create_chat_bloc.dart';
-import 'package:dream_home/src/features/chatting/chats/chats_bloc.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
