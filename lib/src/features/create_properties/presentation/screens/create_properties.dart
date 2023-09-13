@@ -1,9 +1,10 @@
 import 'package:chip_list/chip_list.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
-import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_button.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
+import '../../../featured_properties/presentation/widgets/search_properties_field.dart';
+import '../../../user_profile/presentation/widgets/profile_button.dart';
 
 class CreatePropertyScreen extends StatefulWidget {
   const CreatePropertyScreen({super.key});

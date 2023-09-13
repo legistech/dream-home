@@ -1,4 +1,4 @@
-import 'package:dream_home/src/features/create_properties/presentation/screens/create_properties.dart';
+import 'package:dream_home/src/features/chatting/presentation/create_chat.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -7,6 +7,7 @@ import 'common/presentation/screens/splash.dart';
 import 'common/presentation/screens/welcome.dart';
 import 'features/authentication/presentation/screens/login.dart';
 import 'features/authentication/presentation/screens/register.dart';
+import 'features/create_properties/presentation/screens/create_properties.dart';
 import 'features/featured_properties/presentation/screens/single_property.dart';
 import 'features/featured_properties/presentation/screens/view_all.dart';
 
@@ -80,6 +81,13 @@ class GenerateRoutes {
       case '/create-property':
         return PageRouteBuilder(
           pageBuilder: (_, __, ___) => const CreatePropertyScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
+      case '/create-chat':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const CreateChatScreen(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },

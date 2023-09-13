@@ -1,8 +1,9 @@
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
+import '../../../featured_properties/presentation/widgets/search_properties_field.dart';
 
 class ChatsScreen extends StatefulWidget {
   const ChatsScreen({super.key});
@@ -44,7 +45,12 @@ class _ChatsScreenState extends State<ChatsScreen> {
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const Icon(IconlyLight.edit_square),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, '/create-chat');
+              },
+              child: const Icon(IconlyLight.edit_square),
+            ),
           ],
         ),
         SizedBox(height: height * 2),
