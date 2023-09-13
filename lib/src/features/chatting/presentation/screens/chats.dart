@@ -1,4 +1,4 @@
-import 'package:dream_home/src/features/chatting/chats/chats_bloc.dart';
+import 'package:dream_home/src/features/chatting/application/blocs/chats/chats_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
