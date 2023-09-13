@@ -1,6 +1,7 @@
 import 'package:chip_list/chip_list.dart';
+
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/presentation/screens/common.dart';
+import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/search_properties_field.dart';
 import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_button.dart';
 import 'package:dream_home/src/theme/pellet.dart';
