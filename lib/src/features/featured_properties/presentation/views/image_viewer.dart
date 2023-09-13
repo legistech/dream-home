@@ -1,7 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../constants/screen.dart';
+import '../../../../theme/pellet.dart';
 
 class ImageViewer extends StatelessWidget {
   const ImageViewer({super.key, required this.imageUrl, required this.tag});

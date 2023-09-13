@@ -91,35 +91,6 @@ class _View3State extends State<View3> {
               SizedBox(
                 height: height * 1,
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              //   children: [
-              //     Column(
-              //       children: [
-              //         const Text(
-              //           'You are here to:',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 18,
-              //           ),
-              //         ),
-              //         Card(child: TextFormField()),
-              //       ],
-              //     ),
-              //     Column(
-              //       children: [
-              //         const Text(
-              //           'Your contact details:',
-              //           style: TextStyle(
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 18,
-              //           ),
-              //         ),
-              //         Card(child: TextFormField()),
-              //       ],
-              //     ),
-              //   ],
-              // ),
               SizedBox(
                 height: height * 1,
               ),

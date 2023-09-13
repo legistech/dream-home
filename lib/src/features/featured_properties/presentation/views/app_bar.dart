@@ -23,12 +23,7 @@ class AppBarView extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        IconButton(
-          onPressed: () {},
-          icon: const Badge(
-            child: Icon(IconlyLight.notification),
-          ),
-        ),
+        GestureDetector(child: const Icon(IconlyLight.notification)),
       ],
     );
   }

@@ -1,8 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'common/provider/bloc_provider.dart';
 import 'routes.dart';
 import 'theme/theme_data.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 /// [DreamHome] class is the root widget of the app.
 class DreamHome extends StatelessWidget {

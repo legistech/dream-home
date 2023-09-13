@@ -1,8 +1,8 @@
-import 'package:dream_home/src/features/chatting/presentation/screens/chats.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 import '../../../constants/screen.dart';
+import '../../../features/chatting/presentation/screens/chats.dart';
 import '../../../features/featured_properties/domain/models/property.dart';
 import '../../../features/featured_properties/presentation/screens/featured_properties.dart';
 import '../../../features/user_profile/presentation/screens/profile.dart';
