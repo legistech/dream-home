@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/views/image_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -7,6 +6,7 @@ import '../../../../constants/assets.dart';
 import '../../../../constants/screen.dart';
 import '../../../../theme/pellet.dart';
 import '../../domain/models/property.dart';
+import '../views/image_viewer.dart';
 import '../views/location.dart';
 import '../views/major_info.dart';
 import '../views/neighborhood_info.dart';

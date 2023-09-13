@@ -1,5 +1,4 @@
 import 'package:chip_list/chip_list.dart';
-import 'package:dream_home/src/features/featured_properties/presentation/widgets/property_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
@@ -12,6 +11,7 @@ import '../../domain/models/property.dart';
 import '../views/app_bar.dart';
 import '../widgets/featured_image.dart';
 import '../widgets/featured_info.dart';
+import '../widgets/property_card.dart';
 import '../widgets/search_properties_field.dart';
 
 class FeaturedPropertiesScreen extends StatefulWidget {
@@ -62,6 +62,7 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
               CommonFeaturesSearchField(
                 showFilters: true,
                 searchController: _searchController,
+                hintText: 'Search for anything',
               ),
               SizedBox(height: height * 1),
               ChipList(

@@ -1,7 +1,7 @@
-import 'package:dream_home/src/constants/screen.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
+import '../../../../constants/screen.dart';
 import '../../../../theme/pellet.dart';
 import '../views/filters_bottom_sheet.dart';
 
@@ -11,12 +11,17 @@ class CommonFeaturesSearchField extends StatelessWidget {
     this.showFilters = false,
     required TextEditingController searchController,
     this.borderColor = Colors.transparent,
+    required this.hintText,
+    this.showPrefixIcon = true,
+    this.onChanged,
   }) : _searchController = searchController;
 
   final TextEditingController _searchController;
   final bool showFilters;
   final Color borderColor;
-
+  final String hintText;
+  final bool showPrefixIcon;
+  final Function(String value)? onChanged;
   @override
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
@@ -26,9 +31,10 @@ class CommonFeaturesSearchField extends StatelessWidget {
         controller: _searchController,
         keyboardType: TextInputType.text,
         onTapOutside: (event) => FocusManager.instance.primaryFocus?.unfocus(),
+        onChanged: (value) => onChanged!(value),
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-          hintText: 'Search for anything',
+          hintText: hintText,
           filled: true,
           fillColor: Colors.white,
           enabledBorder: OutlineInputBorder(
@@ -45,10 +51,12 @@ class CommonFeaturesSearchField extends StatelessWidget {
               width: 2.0,
             ),
           ),
-          prefixIcon: Icon(
-            IconlyLight.search,
-            color: Pellet.kDark,
-          ),
+          prefixIcon: showPrefixIcon
+              ? Icon(
+                  IconlyLight.search,
+                  color: Pellet.kDark,
+                )
+              : null,
           suffixIcon: showFilters
               ? IconButton(
                   onPressed: () {
