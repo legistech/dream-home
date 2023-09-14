@@ -85,6 +85,13 @@ class GenerateRoutes {
             return FadeTransition(opacity: animation, child: child);
           },
         );
+      case '/emi-calculator':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const CreateChatScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       case '/messages':
         {
           final args = settings.arguments as Map<String, dynamic>;
