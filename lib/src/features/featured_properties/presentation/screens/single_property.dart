@@ -164,10 +164,16 @@ class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
                 SizedBox(height: height * 1),
                 const ViewTitle('Check your affordability'),
                 SizedBox(height: height * 1),
-                InfoIcon(
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/emi-calculator');
+                  },
+                  child: InfoIcon(
                     title: 'EMI Calculator',
                     asset: Asset.calculatorIcon,
-                    subtitle: 'EMI Starts at 80.50K'),
+                    subtitle: 'EMI Starts at 80.50K',
+                  ),
+                ),
                 // TODO: Add affordability information after abdullah is done with the emi calculator
                 SizedBox(height: height * 1),
                 const ViewTitle('Price Insights'),
