@@ -21,5 +21,9 @@ class MessagesBloc extends Bloc<MessagesEvent, MessagesState> {
         emit(MessagesLoadingFailed(e.errorMessage));
       }
     });
+
+    on<MessageSend>((event, emit) {
+      // TODO: implement event handler
+    });
   }
 }

@@ -15,4 +15,21 @@ class MessagesRepo {
       rethrow;
     }
   }
+
+  static Future<void> sendMessage(
+      String senderId, String receiverId, String chatId, String content) async {
+    try {
+      final pb = await PocketBaseInstance.instance;
+      await pb.collection('messages').create(
+        body: {
+          'sender': senderId,
+          'receiver': receiverId,
+          'content': content,
+          'chat': chatId,
+        },
+      );
+    } on ClientException {
+      rethrow;
+    }
+  }
 }

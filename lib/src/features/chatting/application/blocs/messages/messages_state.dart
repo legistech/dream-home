@@ -11,6 +11,10 @@ final class MessagesInitial extends MessagesState {}
 
 final class MessagesLoading extends MessagesState {}
 
+final class MessagesSent extends MessagesState {}
+
+final class MessagesSendingFailed extends MessagesState {}
+
 final class MessagesLoadingFailed extends MessagesState {
   final String error;
   const MessagesLoadingFailed(this.error);
