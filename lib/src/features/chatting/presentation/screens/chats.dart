@@ -89,6 +89,15 @@ class _ChatsScreenState extends State<ChatsScreen> {
                                 ),
                               ),
                               child: ListTile(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                    context,
+                                    '/messages',
+                                    arguments: {
+                                      'chatId': state.chats[index].id,
+                                    },
+                                  );
+                                },
                                 trailing: Column(
                                   children: [
                                     const Text('12:30'),

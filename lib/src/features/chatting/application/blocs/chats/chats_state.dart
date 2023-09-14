@@ -11,10 +11,6 @@ final class ChatsInitial extends ChatsState {}
 
 final class ChatsLoading extends ChatsState {}
 
-final class ChatsMessagesLoading extends ChatsState {}
-
-final class ChatsMessagesLoaded extends ChatsState {}
-
 final class ChatsLoaded extends ChatsState {
   final String currentUserId;
   final List<Chat> chats;

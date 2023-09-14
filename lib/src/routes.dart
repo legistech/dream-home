@@ -89,8 +89,8 @@ class GenerateRoutes {
         {
           final args = settings.arguments as Map<String, dynamic>;
           return PageRouteBuilder(
-            pageBuilder: (_, __, ___) =>  MessagesScreen(
-              messages: args['messages'],
+            pageBuilder: (_, __, ___) => MessagesScreen(
+              chatId: args['chatId'],
             ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {

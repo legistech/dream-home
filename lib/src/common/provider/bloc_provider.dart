@@ -1,5 +1,6 @@
 import 'package:dream_home/src/features/chatting/application/blocs/chats/chats_bloc.dart';
 import 'package:dream_home/src/features/chatting/application/blocs/create_chat/create_chat_bloc.dart';
+import 'package:dream_home/src/features/chatting/application/blocs/messages/messages_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/authentication/application/blocs/forgot_pwd/forgot_pwd_bloc.dart';
@@ -15,6 +16,7 @@ class Providers {
         BlocProvider<ForgotPwdBloc>(create: (context) => ForgotPwdBloc()),
         BlocProvider<ProfileBloc>(create: (context) => ProfileBloc()),
         BlocProvider<ChatsBloc>(create: (context) => ChatsBloc()),
+        BlocProvider<MessagesBloc>(create: (context) => MessagesBloc()),
         BlocProvider<CreateChatBloc>(create: (context) => CreateChatBloc()),
         BlocProvider<FeaturedPropertiesBloc>(
             create: (context) => FeaturedPropertiesBloc()),
