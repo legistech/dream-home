@@ -1,5 +1,6 @@
 import 'package:dream_home/src/features/chatting/presentation/screens/create_chat.dart';
 import 'package:dream_home/src/features/chatting/presentation/screens/messages.dart';
+import 'package:dream_home/src/features/emi_calculator/presentation/screens/emi_calculator.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -87,7 +88,7 @@ class GenerateRoutes {
         );
       case '/emi-calculator':
         return PageRouteBuilder(
-          pageBuilder: (_, __, ___) => const CreateChatScreen(),
+          pageBuilder: (_, __, ___) => const EmiCalculator(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             return FadeTransition(opacity: animation, child: child);
           },
