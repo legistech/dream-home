@@ -22,10 +22,19 @@ class MessagesScreen extends StatefulWidget {
 
 class _MessagesScreenState extends State<MessagesScreen> {
   late List<Message> messages;
+  late final TextEditingController messageController;
+
   @override
   void initState() {
     super.initState();
     context.read<MessagesBloc>().add(MessagesLoad(widget.chatId));
+    messageController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    messageController.dispose();
   }
 
   @override
