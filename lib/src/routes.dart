@@ -99,6 +99,8 @@ class GenerateRoutes {
           return PageRouteBuilder(
             pageBuilder: (_, __, ___) => MessagesScreen(
               chatId: args['chatId'],
+              currentUser: args['currentUser'],
+              nextUser: args['nextUser'],
             ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
