@@ -46,10 +46,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
       decoration: BoxDecoration(
         gradient: Pellet.kBackgroundGradient,
       ),
-      child: BlocConsumer<MessagesBloc, MessagesState>(
-        listener: (context, state) {
-          print(state);
-        },
+      child: BlocBuilder<MessagesBloc, MessagesState>(
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
