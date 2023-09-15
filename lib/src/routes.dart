@@ -1,6 +1,7 @@
 import 'package:dream_home/src/features/chatting/presentation/screens/create_chat.dart';
 import 'package:dream_home/src/features/chatting/presentation/screens/messages.dart';
 import 'package:dream_home/src/features/create_properties/presentation/screens/create_properties.dart';
+import 'package:dream_home/src/features/emi_calculator/presentation/screens/emi_calculator.dart';
 import 'package:flutter/material.dart';
 
 import 'app.dart';
@@ -93,12 +94,19 @@ class GenerateRoutes {
             return FadeTransition(opacity: animation, child: child);
           },
         );
+      case '/emi-calculator':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const EmiCalculator(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       case '/messages':
         {
           final args = settings.arguments as Map<String, dynamic>;
           return PageRouteBuilder(
             pageBuilder: (_, __, ___) => MessagesScreen(
-              messages: args['messages'],
+              chatId: args['chatId'],
             ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
