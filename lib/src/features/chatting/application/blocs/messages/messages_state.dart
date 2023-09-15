@@ -24,3 +24,8 @@ final class MessagesLoaded extends MessagesState {
   final List<Message> messages;
   const MessagesLoaded(this.messages);
 }
+
+final class MessageNew extends MessagesState {
+  final Message messages;
+  const MessageNew(this.messages);
+}

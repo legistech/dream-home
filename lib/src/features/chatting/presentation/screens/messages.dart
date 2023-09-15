@@ -48,7 +48,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
       ),
       child: BlocConsumer<MessagesBloc, MessagesState>(
         listener: (context, state) {
-          if (state is MessagesLoaded) {}
+          print(state);
         },
         builder: (context, state) {
           return Scaffold(
@@ -120,7 +120,6 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   ),
                   IconButton(
                     onPressed: () {
-                      print('Hi');
                       context.read<MessagesBloc>().add(
                             MessageSend(
                               chatId: widget.chatId,
@@ -128,9 +127,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                               receiverId: nextUser.id!,
                             ),
                           );
-                      setState(() {
-                        messageController.clear();
-                      });
+                      messageController.clear();
                     },
                     icon: const Icon(IconlyLight.send),
                   ),

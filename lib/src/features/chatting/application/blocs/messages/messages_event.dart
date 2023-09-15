@@ -12,6 +12,11 @@ final class MessagesLoad extends MessagesEvent {
   const MessagesLoad(this.chatId);
 }
 
+final class MessageAdd extends MessagesEvent {
+  final Message message;
+  const MessageAdd(this.message);
+}
+
 final class MessageSend extends MessagesEvent {
   final String chatId;
   final String content;
