@@ -53,46 +53,49 @@ class _MessagesScreenState extends State<MessagesScreen> {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
+              centerTitle: true,
               title: Text(nextUser.name!),
               actions: [
                 IconButton(
                   onPressed: () {},
                   icon: const Icon(IconlyLight.call),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(IconlyLight.video),
-                ),
               ],
             ),
             body: state is MessagesLoaded
-                ? Column(
-                    children: [
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: state.messages.length,
-                          itemBuilder: (context, index) {
-                            final message = state.messages[index];
-                            return Align(
-                              alignment: message.sender == currentUser.id
-                                  ? Alignment.centerRight
-                                  : Alignment.centerLeft,
-                              child: Container(
-                                padding: const EdgeInsets.all(8),
-                                margin: const EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                  color: message.sender == currentUser.id
-                                      ? Pellet.kSecondaryColor
-                                      : Pellet.kWhite,
-                                  borderRadius: BorderRadius.circular(8),
+                ? Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: ListView.builder(
+                            shrinkWrap: true,
+                            reverse: true,
+                            itemCount: state.messages.length,
+                            itemBuilder: (context, index) {
+                              final message = state.messages[index];
+                              return Align(
+                                alignment: message.sender == currentUser.id
+                                    ? Alignment.centerRight
+                                    : Alignment.centerLeft,
+                                child: Container(
+                                  padding: const EdgeInsets.all(8),
+                                  margin: const EdgeInsets.all(8),
+                                  decoration: BoxDecoration(
+                                    color: message.sender == currentUser.id
+                                        ? Pellet.kWhite
+                                        : Pellet.kSecondaryColor,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(message.content!),
                                 ),
-                                child: Text(message.content!),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: width * 25),
+                      ],
+                    ),
                   )
                 : const Center(
                     child: CircularProgressIndicator(),
@@ -103,6 +106,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      controller: messageController,
                       decoration: InputDecoration(
                         hintText: 'Type a message',
                         fillColor: Pellet.kWhite,
@@ -115,7 +119,19 @@ class _MessagesScreenState extends State<MessagesScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print('Hi');
+                      context.read<MessagesBloc>().add(
+                            MessageSend(
+                              chatId: widget.chatId,
+                              content: messageController.text,
+                              receiverId: nextUser.id!,
+                            ),
+                          );
+                      setState(() {
+                        messageController.clear();
+                      });
+                    },
                     icon: const Icon(IconlyLight.send),
                   ),
                 ],

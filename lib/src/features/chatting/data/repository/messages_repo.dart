@@ -9,6 +9,7 @@ class MessagesRepo {
       final record = await pb.collection('messages').getList(
         headers: {'token': 'dev'},
         filter: 'chat = "$chatId"',
+        sort: '-created',
       );
       return record;
     } on ClientException {
@@ -17,10 +18,14 @@ class MessagesRepo {
   }
 
   static Future<void> sendMessage(
-      String senderId, String receiverId, String chatId, String content) async {
+      String receiverId, String chatId, String content) async {
     try {
       final pb = await PocketBaseInstance.instance;
+      final senderId = pb.authStore.model.id;
       await pb.collection('messages').create(
+        headers: {
+          'token': 'dev',
+        },
         body: {
           'sender': senderId,
           'receiver': receiverId,

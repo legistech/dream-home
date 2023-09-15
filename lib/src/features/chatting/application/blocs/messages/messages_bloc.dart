@@ -22,8 +22,9 @@ class MessagesBloc extends Bloc<MessagesEvent, MessagesState> {
       }
     });
 
-    on<MessageSend>((event, emit) {
-      // TODO: implement event handler
+    on<MessageSend>((event, emit) async {
+      await MessagesRepo.sendMessage(
+          event.receiverId, event.chatId, event.content);
     });
   }
 }
