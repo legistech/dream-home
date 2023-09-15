@@ -80,8 +80,11 @@ class _ChatsScreenState extends State<ChatsScreen> {
                       child: ListView.builder(
                           padding: const EdgeInsets.all(0),
                           itemBuilder: (context, index) {
-                            final receiver = state.chats[index].expand!.users!
+                            final nextUser = state.chats[index].expand!.users!
                                 .firstWhere((user) => user.id != userId);
+                            final currentUser = state
+                                .chats[index].expand!.users!
+                                .firstWhere((user) => user.id == userId);
                             return Card(
                               shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.all(
@@ -95,6 +98,8 @@ class _ChatsScreenState extends State<ChatsScreen> {
                                     '/messages',
                                     arguments: {
                                       'chatId': state.chats[index].id,
+                                      'currentUser': currentUser,
+                                      'nextUser': nextUser,
                                     },
                                   );
                                 },
@@ -116,7 +121,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
                                   ],
                                 ),
                                 title: Text(
-                                  receiver.name!,
+                                  nextUser.name!,
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                   ),

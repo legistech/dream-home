@@ -23,13 +23,13 @@ class CommonElevatedButton extends StatelessWidget {
         minimumSize: MaterialStatePropertyAll(
           Size(
             width * 90,
-            height * 7,
+            height * 5,
           ),
         ),
       ),
       child: Text(
         text,
-        style: TextStyle(fontSize: height * 2.5),
+        style: TextStyle(fontSize: height * 2),
       ),
     );
   }

@@ -50,6 +50,7 @@ class ChatRepository {
       final record = await pb.collection('messages').getList(
         headers: {'token': 'dev'},
         filter: 'chat = "$chatId"',
+        sort: '-created',
       );
       return record;
     } on ClientException {
