@@ -2,8 +2,11 @@ import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
 import 'package:dream_home/src/features/create_properties/presentation/screens/view3.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
+import 'package:dream_home/src/features/create_properties/presentation/widgets/Common_bottom_bar.dart';
+import 'package:dream_home/src/features/create_properties/presentation/widgets/common_chip_list.dart';
+import 'package:dream_home/src/features/create_properties/presentation/widgets/common_progress_indicator.dart';
+import 'package:dream_home/src/features/create_properties/presentation/widgets/common_text.dart';
 import 'package:dream_home/src/features/featured_properties/presentation/widgets/options_info.dart';
-import 'package:dream_home/src/features/user_profile/presentation/widgets/profile_button.dart';
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
@@ -98,314 +101,148 @@ class _View2State extends State<View2> {
         gradient: Pellet.kBackgroundGradient,
       ),
       child: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(70),
-          child: CommonAppBar(),
-        ),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                  'step 2 of 3',
-                  style: TextStyle(
-                    fontSize: 15,
+          appBar: const PreferredSize(
+            preferredSize: Size.fromHeight(70),
+            child: CommonAppBar(),
+          ),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'step 2 of 3',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const LinearProgressIndicator(
-                  value: 0.66,
-                  minHeight: 5,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF004267)),
-                  backgroundColor: Colors.white,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Add Property Details:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                  SizedBox(height: height * 1),
+                  const CommonProgressIndicator(indicatorValue: 0.66),
+                  SizedBox(height: height * 1),
+                  const Text(
+                    'Add Property Details:',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  'Property type, Room details and more',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Pellet.kDark,
+                  SizedBox(height: height * 0.5),
+                  Text(
+                    'Property type, Room details and more',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Pellet.kDark,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: height * 2,
-                ),
-                const Text(
-                  'Property Kind:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  SizedBox(height: height * 2),
+                  const CommonText(titletext: 'Property Kind:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: propertykind,
+                      selectedListindex: selectedpropertykind),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Property Type:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: propertyType,
+                      selectedListindex: selectedpropertyType),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Property Status'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: propertyStatus,
+                      selectedListindex: selectedPropertyStatus),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Bedrooms:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: bedrooms, selectedListindex: selectedBedroom),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Bathrooms:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: bathrooms, selectedListindex: selectedBathroom),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Balcony:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: balcony, selectedListindex: selectedBalcony),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Amenities:'),
+                  SizedBox(height: height * 1),
+                  ChipList(
+                    supportsMultiSelect: true,
+                    listOfChipNames: amenities,
+                    listOfChipIndicesCurrentlySeclected: [selectedAmenities],
+                    inactiveBgColorList: [Pellet.kSecondaryColor],
+                    activeBgColorList: [Pellet.kPrimaryColor],
+                    inactiveTextColorList: [Pellet.kDark],
                   ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: propertykind,
-                  listOfChipIndicesCurrentlySeclected: [selectedpropertykind],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Property Type:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Parking:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: parking, selectedListindex: selectedParking),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Pet Friendly:'),
+                  SizedBox(height: height * 1),
+                  CommonChipList(
+                      list: isPetfriendly,
+                      selectedListindex: selectedIsPetfriendly),
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Cost:'),
+                  SizedBox(height: height * 1),
+                  OptionsInfo(
+                    data: selectedBudget,
+                    leading: '\$',
+                    trailing: 'M+',
                   ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: propertyType,
-                  listOfChipIndicesCurrentlySeclected: [selectedpropertyType],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Property Status:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  RangeSlider(
+                    max: 50,
+                    values: RangeValues(selectedBudget[0], selectedBudget[1]),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedBudget[0] = value.start;
+                        selectedBudget[1] = value.end;
+                      });
+                    },
+                    activeColor: Pellet.kPrimaryColor,
                   ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: propertyStatus,
-                  listOfChipIndicesCurrentlySeclected: [selectedPropertyStatus],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Bedrooms:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  SizedBox(height: height * 1),
+                  const CommonText(titletext: 'Built-up Area:'),
+                  SizedBox(height: height * 1),
+                  OptionsInfo(
+                    data: selectedBuiltUpAreas,
+                    leading: 'sqft',
+                    trailing: 'sqft+',
                   ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: bedrooms,
-                  listOfChipIndicesCurrentlySeclected: [selectedBedroom],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Bathrooms:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                  RangeSlider(
+                    max: 5000,
+                    values: RangeValues(
+                        selectedBuiltUpAreas[0], selectedBuiltUpAreas[1]),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedBuiltUpAreas[0] = value.start;
+                        selectedBuiltUpAreas[1] = value.end;
+                      });
+                    },
+                    activeColor: Pellet.kPrimaryColor,
                   ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: bathrooms,
-                  listOfChipIndicesCurrentlySeclected: [selectedBathroom],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Balcony:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: balcony,
-                  listOfChipIndicesCurrentlySeclected: [selectedBalcony],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Amenities:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  supportsMultiSelect: true,
-                  listOfChipNames: amenities,
-                  listOfChipIndicesCurrentlySeclected: [selectedAmenities],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Parking:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: parking,
-                  listOfChipIndicesCurrentlySeclected: [selectedParking],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Parking:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                ChipList(
-                  listOfChipNames: isPetfriendly,
-                  listOfChipIndicesCurrentlySeclected: [selectedIsPetfriendly],
-                  inactiveBgColorList: [Pellet.kSecondaryColor],
-                  activeBgColorList: [Pellet.kPrimaryColor],
-                  inactiveTextColorList: [Pellet.kDark],
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Cost:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                OptionsInfo(
-                  data: selectedBudget,
-                  leading: '\$',
-                  trailing: 'M+',
-                ),
-                RangeSlider(
-                  max: 50,
-                  values: RangeValues(selectedBudget[0], selectedBudget[1]),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedBudget[0] = value.start;
-                      selectedBudget[1] = value.end;
-                    });
-                  },
-                  activeColor: Pellet.kPrimaryColor,
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                const Text(
-                  'Built-up Area:',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                  ),
-                ),
-                SizedBox(
-                  height: height * 1,
-                ),
-                OptionsInfo(
-                  data: selectedBuiltUpAreas,
-                  leading: 'sqft',
-                  trailing: 'sqft+',
-                ),
-                RangeSlider(
-                  max: 5000,
-                  values: RangeValues(
-                      selectedBuiltUpAreas[0], selectedBuiltUpAreas[1]),
-                  onChanged: (value) {
-                    setState(() {
-                      selectedBuiltUpAreas[0] = value.start;
-                      selectedBuiltUpAreas[1] = value.end;
-                    });
-                  },
-                  activeColor: Pellet.kPrimaryColor,
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-        ),
-        bottomNavigationBar: BottomAppBar(
-          color: Colors.transparent,
-          height: 70,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-            child: ProfileButton(
-                icon: Icons.navigate_next,
-                text: 'Almost there!',
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) => const View3()));
-                }),
-          ),
-        ),
-      ),
+          bottomNavigationBar: CommonBottomBar(
+              icon: Icons.navigate_next,
+              buttonText: 'Almost There',
+              ontap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => const View3()));
+              })),
     );
   }
 }
