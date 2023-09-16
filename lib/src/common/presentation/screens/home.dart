@@ -1,3 +1,4 @@
+import 'package:dream_home/src/features/maps/presentation/maps.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -30,9 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
       FeaturedPropertiesScreen(
         properties: widget.properties,
       ),
-      const Center(
-        child: Text('MapScreen'),
-      ),
+      const Maps(),
       const ChatsScreen(),
       const UserProfileScreen(),
     ];
@@ -42,10 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         gradient: Pellet.kBackgroundGradient,
       ),
       child: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: screens[selectedIndex],
-        ),
+        body: screens[selectedIndex],
         floatingActionButton: FloatingActionButton(
           backgroundColor: Pellet.kPrimaryColor,
           onPressed: () {
