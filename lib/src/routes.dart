@@ -19,7 +19,12 @@ class GenerateRoutes {
   static onGenerateRoutes(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const SplashScreen());
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const SplashScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       case '/welcome':
         return PageRouteBuilder(
           pageBuilder: (_, __, ___) => const WelcomeScreen(),
@@ -107,6 +112,8 @@ class GenerateRoutes {
           return PageRouteBuilder(
             pageBuilder: (_, __, ___) => MessagesScreen(
               chatId: args['chatId'],
+              currentUser: args['currentUser'],
+              nextUser: args['nextUser'],
             ),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {

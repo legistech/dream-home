@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -73,7 +75,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         final bool isAuthorized = await AuthRepo.isUserAuthorized;
         late List<Property> properties;
         if (isAuthorized) {
-          final record = await PropertiesRepo.getProperties;
+          final record = await PropertiesRepo.getProperties.timeout(
+            const Duration(seconds: 3),
+          );
+
           properties = record.items
               .map(
                 (property) => Property.fromRecord(property),
@@ -100,6 +105,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       } on ClientException catch (e) {
         emit(LoginFailure(e.errorMessage));
         debugPrint(e.errorMessage);
+      } on TimeoutException catch (e) {
+        emit(const LoginUserAuthorizationTimeout('Request Timeout'));
+        debugPrint(e.message);
       }
     });
 
