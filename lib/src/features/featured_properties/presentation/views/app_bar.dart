@@ -4,9 +4,12 @@ import 'package:iconly/iconly.dart';
 import '../../../../theme/pellet.dart';
 
 class AppBarView extends StatelessWidget {
+  final String currentLocation;
+
   const AppBarView({
-    super.key,
-  });
+    Key? key,
+    required this.currentLocation, // Add this parameter
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class AppBarView extends StatelessWidget {
         const Icon(IconlyBold.location),
         const SizedBox(width: 8),
         Text(
-          'Pune',
+          currentLocation, // Use the currentLocation parameter here
           style: TextStyle(
             color: Pellet.kDark,
             fontSize: 16,
