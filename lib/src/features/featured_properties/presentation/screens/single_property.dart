@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dream_home/src/features/property_value_estimate/data/repositories/property_value_calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -171,7 +172,7 @@ class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
                   child: InfoIcon(
                     title: 'EMI Calculator',
                     asset: Asset.calculatorIcon,
-                    subtitle: 'EMI Starts at 80.50K',
+                    subtitle: 'EMI Starts at 100K',
                   ),
                 ),
                 // TODO: Add affordability information after abdullah is done with the emi calculator
@@ -179,9 +180,11 @@ class _SinglePropertyScreenState extends State<SinglePropertyScreen> {
                 const ViewTitle('Price Insights'),
                 SizedBox(height: height * 1),
                 InfoIcon(
-                  title: 'Property Price increased by 2.5%',
+                  title: EstimateValueCalculator()
+                      .calculateEstimate(widget.property)
+                      .toString(),
                   asset: Asset.increaseIcon,
-                  subtitle: 'Price increased by 2.5% in last 6 months',
+                  subtitle: 'Estimated Value of the Property',
                 ),
                 // TODO: Add price insights after abdullah is done with the price estimator
                 SizedBox(height: height * 1),
