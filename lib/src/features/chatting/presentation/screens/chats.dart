@@ -15,7 +15,7 @@ class ChatsScreen extends StatefulWidget {
 }
 
 class _ChatsScreenState extends State<ChatsScreen> {
-  late final TextEditingController searchController;
+  late TextEditingController searchController;
   late String userId;
 
   @override
@@ -35,7 +35,7 @@ class _ChatsScreenState extends State<ChatsScreen> {
   Widget build(BuildContext context) {
     final height = ScreenSize.height(context);
     return Padding(
-      padding: EdgeInsets.all(16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           SizedBox(height: height * 5),
