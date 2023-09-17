@@ -54,7 +54,7 @@ class _View3State extends State<LocationDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'step 3 of 3',
+                    'Step 3 of 3',
                     style: TextStyle(
                       fontSize: 15,
                     ),

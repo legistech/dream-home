@@ -1,5 +1,4 @@
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/data/create_property_repo.dart';
 import 'package:dream_home/src/features/create_properties/presentation/screens/property_details.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/Common_bottom_bar.dart';
@@ -57,7 +56,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'step 1 of 3',
+                  'Step 1 of 3',
                   style: TextStyle(
                     fontSize: 15,
                   ),

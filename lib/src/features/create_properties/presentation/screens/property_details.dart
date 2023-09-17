@@ -112,7 +112,7 @@ class _View2State extends State<PropertyDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'step 2 of 3',
+                    'Step 2 of 3',
                     style: TextStyle(
                       fontSize: 15,
                     ),
