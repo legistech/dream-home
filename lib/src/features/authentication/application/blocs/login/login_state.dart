@@ -33,6 +33,11 @@ final class LoginUserAuthorized extends LoginState {
 
 final class LoginUserUnauthorized extends LoginState {}
 
+final class LoginUserAuthorizationTimeout extends LoginState {
+  final String error;
+  const LoginUserAuthorizationTimeout(this.error);
+}
+
 final class ToggledPasswordVisibility extends LoginState {}
 
 final class LoginFailure extends LoginState {
