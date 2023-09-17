@@ -49,47 +49,36 @@ class _MapsState extends State<Maps> {
                   child: Text('Location details are not available'));
             } else {
               // Location details are available, display them
-              return Column(
+              return FlutterMap(
+                options: MapOptions(
+                  center: liveLocation.currentLocation != null
+                      ? LatLng(
+                          liveLocation.currentLocation!.latitude,
+                          liveLocation.currentLocation!.longitude,
+                        )
+                      : const LatLng(21, 87), // Default to a fixed location
+                  zoom: 10.0,
+                ),
                 children: [
-                  Text(
-                    'Location Details: $details',
-                    style: const TextStyle(fontSize: 18),
+                  TileLayer(
+                    urlTemplate:
+                        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                    subdomains: const ['a', 'b', 'c'],
                   ),
-                  Expanded(
-                    child: FlutterMap(
-                      options: MapOptions(
-                        center: liveLocation.currentLocation != null
-                            ? LatLng(
+                  MarkerLayer(
+                    markers: liveLocation.currentLocation != null
+                        ? [
+                            Marker(
+                              width: 20.0, // Adjust as needed
+                              height: 20.0, // Adjust as needed
+                              point: LatLng(
                                 liveLocation.currentLocation!.latitude,
                                 liveLocation.currentLocation!.longitude,
-                              )
-                            : const LatLng(
-                                21, 87), // Default to a fixed location
-                        zoom: 10.0,
-                      ),
-                      children: [
-                        TileLayer(
-                          urlTemplate:
-                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                          subdomains: const ['a', 'b', 'c'],
-                        ),
-                        MarkerLayer(
-                          markers: liveLocation.currentLocation != null
-                              ? [
-                                  Marker(
-                                    width: 20.0, // Adjust as needed
-                                    height: 20.0, // Adjust as needed
-                                    point: LatLng(
-                                      liveLocation.currentLocation!.latitude,
-                                      liveLocation.currentLocation!.longitude,
-                                    ),
-                                    builder: (context) => LocationIndicator(),
-                                  ),
-                                ]
-                              : [],
-                        ),
-                      ],
-                    ),
+                              ),
+                              builder: (context) => const LocationIndicator(),
+                            ),
+                          ]
+                        : [],
                   ),
                 ],
               );
