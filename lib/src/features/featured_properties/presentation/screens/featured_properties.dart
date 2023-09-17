@@ -1,8 +1,8 @@
-import 'package:chip_list/chip_list.dart';
+import 'package:dream_home/src/features/maps/data/location_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
-
+import 'package:chip_list/chip_list.dart';
 import '../../../../constants/assets.dart';
 import '../../../../constants/screen.dart';
 import '../../../../theme/pellet.dart';
@@ -29,11 +29,27 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
   final selectedFilter = [0];
   late final TextEditingController _searchController;
   late List<Property> filteredProperties;
+  String ocurrentLocation = 'Loading...';
+
+  // Create an instance of Location
+  late Location liveLocation;
+
   @override
   void initState() {
     super.initState();
     filteredProperties = widget.properties;
     _searchController = TextEditingController();
+
+    // Initialize liveLocation and fetch location details
+    liveLocation = Location();
+    _fetchLocationDetails();
+  }
+
+  void _fetchLocationDetails() async {
+    final details = await liveLocation.getLiveLocationDetails();
+    setState(() {
+      ocurrentLocation = details ?? 'Location details are not available';
+    });
   }
 
   @override
@@ -58,7 +74,9 @@ class _FeaturedPropertiesScreenState extends State<FeaturedPropertiesScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const AppBarView(),
+                AppBarView(
+                  currentLocation: ocurrentLocation,
+                ),
                 SizedBox(height: height * 1),
                 CommonFeaturesSearchField(
                   showFilters: true,
