@@ -82,18 +82,18 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                   ),
                 ),
                 SizedBox(height: height * 2),
-                const CommonText(titletext: 'You are:'),
+                const CommonText(titleText: 'You are:'),
                 SizedBox(height: height * 1),
                 CommonChipList(
                     list: userStatus, selectedListindex: selecteduserStatus),
                 SizedBox(height: height * 1),
-                const CommonText(titletext: 'You are here to:'),
+                const CommonText(titleText: 'You are here to:'),
                 SizedBox(height: height * 1),
                 CommonChipList(
                     list: sellingStatus,
                     selectedListindex: selectedSellingStatus),
                 SizedBox(height: height * 1),
-                const CommonText(titletext: 'Your contact details:'),
+                const CommonText(titleText: 'Your contact details:'),
                 SizedBox(height: height * 1),
                 CommonFeaturesSearchField(
                   searchController: numberController,

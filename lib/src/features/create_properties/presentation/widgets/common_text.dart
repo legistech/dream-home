@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CommonText extends StatelessWidget {
-  final String titletext;
+  final String titleText;
   const CommonText({
-    required this.titletext,
+    required this.titleText,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      titletext,
+      titleText,
       style: const TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 18,
