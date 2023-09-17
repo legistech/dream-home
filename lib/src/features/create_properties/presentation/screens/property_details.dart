@@ -1,6 +1,6 @@
 import 'package:chip_list/chip_list.dart';
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/presentation/screens/view3.dart';
+import 'package:dream_home/src/features/create_properties/presentation/screens/location_details.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/Common_bottom_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/common_chip_list.dart';
@@ -10,15 +10,14 @@ import 'package:dream_home/src/features/featured_properties/presentation/widgets
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
-class View2 extends StatefulWidget {
-  const View2({super.key});
+class PropertyDetailScreen extends StatefulWidget {
+  const PropertyDetailScreen({super.key});
 
   @override
-  State<View2> createState() => _View2State();
+  State<PropertyDetailScreen> createState() => _View2State();
 }
 
-class _View2State extends State<View2> {
-  final numberController = TextEditingController();
+class _View2State extends State<PropertyDetailScreen> {
   List<String> propertykind = [
     'Residential',
     'Commercial',
@@ -241,7 +240,8 @@ class _View2State extends State<View2> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => const View3()));
+                        builder: (BuildContext context) =>
+                            const LocationDetailScreen()));
               })),
     );
   }

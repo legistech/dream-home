@@ -1,5 +1,6 @@
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/presentation/screens/view2.dart';
+import 'package:dream_home/src/features/create_properties/data/create_property_repo.dart';
+import 'package:dream_home/src/features/create_properties/presentation/screens/property_details.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/Common_bottom_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/common_chip_list.dart';
@@ -129,7 +130,10 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (BuildContext context) => const View2()));
+                        builder: (BuildContext context) =>
+                            const PropertyDetailScreen()));
+                // CreatePropertyRepo repo = CreatePropertyRepo();
+                // await repo.createProperty();
               })),
     );
   }

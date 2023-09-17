@@ -9,14 +9,14 @@ import 'package:dream_home/src/features/featured_properties/presentation/widgets
 import 'package:dream_home/src/theme/pellet.dart';
 import 'package:flutter/material.dart';
 
-class View3 extends StatefulWidget {
-  const View3({super.key});
+class LocationDetailScreen extends StatefulWidget {
+  const LocationDetailScreen({super.key});
 
   @override
-  State<View3> createState() => _View3State();
+  State<LocationDetailScreen> createState() => _View3State();
 }
 
-class _View3State extends State<View3> {
+class _View3State extends State<LocationDetailScreen> {
   final propertyNameController = TextEditingController();
   final floorNoController = TextEditingController();
   final propertyNoController = TextEditingController();
