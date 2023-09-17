@@ -1,5 +1,6 @@
 import 'package:dream_home/src/features/chatting/presentation/screens/create_chat.dart';
 import 'package:dream_home/src/features/chatting/presentation/screens/messages.dart';
+import 'package:dream_home/src/features/create_properties/presentation/screens/basic_details.dart';
 import 'package:dream_home/src/features/emi_calculator/presentation/screens/emi_calculator.dart';
 import 'package:flutter/material.dart';
 
@@ -84,6 +85,13 @@ class GenerateRoutes {
             },
           );
         }
+      case '/create-property':
+        return PageRouteBuilder(
+          pageBuilder: (_, __, ___) => const CreatePropertyScreen(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(opacity: animation, child: child);
+          },
+        );
       case '/create-chat':
         return PageRouteBuilder(
           pageBuilder: (_, __, ___) => const CreateChatScreen(),

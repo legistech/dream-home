@@ -16,7 +16,7 @@ class CommonAppBar extends StatelessWidget {
             color: Colors.black,
           ),
           label: const Text(
-            'help',
+            'Help',
             style: TextStyle(color: Colors.black),
           ),
         ),
