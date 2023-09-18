@@ -23,8 +23,8 @@ Run the following commands from your terminal:
     </tr>
     <tr>
       <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/b0299c9e-d9d1-46d7-ac46-4f8e20502d78"/></td>
+      <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/c6cd285d-2800-4638-9ad8-d283f940aac9"/></td>
       <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/1ff41af9-4750-42b5-9f33-c59d6e022993"/></td>
-      <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/ec83a29c-3e0c-4b5b-9733-00ad1c3a243c"/></td>
       </tr>
     <tr>
       <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/29677a3f-126a-4a5e-ad57-9c785d6e454c"/></td>
@@ -34,7 +34,7 @@ Run the following commands from your terminal:
     <tr>
       <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/0ea31ca7-7d5e-46ac-a1e8-613e4f545334"/></td>
       <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/3ba29640-0170-470d-b3fb-f605966aa6c2"/></td>
-      <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/c6cd285d-2800-4638-9ad8-d283f940aac9"/></td>
+      <td width="1%"><img src="https://github.com/legistech/dream-home/assets/135656763/ec83a29c-3e0c-4b5b-9733-00ad1c3a243c"/></td>
     </tr>
   </tbody>
 </table>
