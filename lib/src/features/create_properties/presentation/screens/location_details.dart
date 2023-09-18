@@ -54,7 +54,7 @@ class _View3State extends State<LocationDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'step 3 of 3',
+                    'Step 3 of 3',
                     style: TextStyle(
                       fontSize: 15,
                     ),
@@ -80,7 +80,7 @@ class _View3State extends State<LocationDetailScreen> {
                     ),
                   ),
                   SizedBox(height: height * 2),
-                  const CommonText(titletext: 'Property Name:'),
+                  const CommonText(titleText: 'Property Name:'),
                   SizedBox(height: height * 1),
                   CommonFeaturesSearchField(
                       searchController: propertyNameController,
@@ -93,7 +93,7 @@ class _View3State extends State<LocationDetailScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const CommonText(titletext: 'Floor No:'),
+                          const CommonText(titleText: 'Floor No:'),
                           SizedBox(height: height * 0.5),
                           CommonSmallTextfield(controller: floorNoController),
                         ],
@@ -101,7 +101,7 @@ class _View3State extends State<LocationDetailScreen> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const CommonText(titletext: 'Flat/Property No:'),
+                          const CommonText(titleText: 'Flat/Property No:'),
                           SizedBox(height: height * 0.5),
                           CommonSmallTextfield(
                               controller: propertyNoController),
@@ -110,7 +110,7 @@ class _View3State extends State<LocationDetailScreen> {
                     ],
                   ),
                   SizedBox(height: height * 2),
-                  const CommonText(titletext: 'Address:'),
+                  const CommonText(titleText: 'Address:'),
                   SizedBox(height: height * 1),
                   CommonFeaturesSearchField(
                     searchController: addressController,
@@ -119,7 +119,7 @@ class _View3State extends State<LocationDetailScreen> {
                   ),
                   SizedBox(height: height * 1),
                   const CommonText(
-                      titletext: 'what makes your property special?'),
+                      titleText: 'What makes your property special?'),
                   const Text(
                       'Add description for clarity and more listing visibility'),
                   SizedBox(height: height * 1),

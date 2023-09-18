@@ -1,5 +1,4 @@
 import 'package:dream_home/src/constants/screen.dart';
-import 'package:dream_home/src/features/create_properties/data/create_property_repo.dart';
 import 'package:dream_home/src/features/create_properties/presentation/screens/property_details.dart';
 import 'package:dream_home/src/features/create_properties/presentation/views/app_bar.dart';
 import 'package:dream_home/src/features/create_properties/presentation/widgets/Common_bottom_bar.dart';
@@ -57,7 +56,7 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'step 1 of 3',
+                  'Step 1 of 3',
                   style: TextStyle(
                     fontSize: 15,
                   ),
@@ -83,18 +82,18 @@ class _CreatePropertyScreenState extends State<CreatePropertyScreen> {
                   ),
                 ),
                 SizedBox(height: height * 2),
-                const CommonText(titletext: 'You are:'),
+                const CommonText(titleText: 'You are:'),
                 SizedBox(height: height * 1),
                 CommonChipList(
                     list: userStatus, selectedListindex: selecteduserStatus),
                 SizedBox(height: height * 1),
-                const CommonText(titletext: 'You are here to:'),
+                const CommonText(titleText: 'You are here to:'),
                 SizedBox(height: height * 1),
                 CommonChipList(
                     list: sellingStatus,
                     selectedListindex: selectedSellingStatus),
                 SizedBox(height: height * 1),
-                const CommonText(titletext: 'Your contact details:'),
+                const CommonText(titleText: 'Your contact details:'),
                 SizedBox(height: height * 1),
                 CommonFeaturesSearchField(
                   searchController: numberController,
